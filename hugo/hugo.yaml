@@ -1,7 +1,13 @@
-baseURL: "https://hugo-profile.netlify.app"
+baseURL: "https://zkbr.github.io/"
 languageCode: "en-us"
-title: "Hugo Profile"
+title: "ZKBR"
 theme: hugo-profile
+
+taxonomies:
+  categoria: "categorias"
+  projeto: "projetos"
+  status: "status"
+  tag: "tags"
 
 outputs:
   home:

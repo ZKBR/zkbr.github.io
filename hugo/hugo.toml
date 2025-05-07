@@ -1,8 +1,0 @@
-baseURL = 'https://zkbr.github.io/'
-languageCode = 'en-us'
-title = 'ZKBR'
-[taxonomies]
-    categoria = 'categorias'
-    projeto = 'projetos'
-    status = 'status'
-    tag = 'tags'
