@@ -182,72 +182,149 @@ params:
     enable: true
     # title: "Custom Name"
     items:
-      - title: Google kickstart runner
-        content: I solved all problems with optimal solution.
-        url: https://example.com
-        image: /images/achievement.jpg
-      - title: Facebook Hackathon Winner
-        content: Developed a product using Artificial Intelligence.
-        image: /images/achievement.jpg
-      - title: Hugo Profile
-        content: Developed a theme and getting 1K+ downloads per month.
-        url: "https://github.com/gurusabarish/hugo-profile"
-        image: /images/achievement.jpg
-      - title: Microsoft Imagine Runner
-        content: We are developed a product which can help others.
-      - title: Google Summer of Code
-        content: Contributed to a open source project.
-        url: https://example.com
+      - name: "Benchmarking the Performance of zkVMs"
+        description: "TODO"
+        url: projeto/benchmark/
+        # image: /images/project.jpg
+      - name: "Privacy-Preserving Central Bank Digital Currencies"
+        description: "TODO"
+        url: projeto/cbdc/
+        # image: /images/project.jpg
+      - name: "Scalable Attestation for Edited Images"
+        description: "TODO"
+        url: projeto/images/
+        # image: /images/project.jpg
 
   # team
   team:
     enable: true
     # title: "Custom Name"
     items:
-      - title: Hugo Profile
-        content: A highly customizable and mobile first Hugo template for personal portfolio and blog.
-        image: /images/team/profile.png
-        featured:
-          name: Demo
-          link: https://hugo-profile.netlify.app
-        badges:
-          - "Hugo"
-          - "Bootstrap"
-          - "Javascript"
+      - name: "Jeroen van de Graaf"
+        role: "Lead Researcher"
+        image: images/team/jeroen-g.jpeg
+        # featured:
+        #   name: Demo
+        #   link: https://hugo-profile.netlify.app
+        # badges:
+        #   - "Hugo"
         links:
-          - icon: fa fa-envelope
-            url: mailto:?subject=Hugo%20Profile%20Template&body=Check%20it%20out:%20https%3a%2f%2fhugo-profile.netlify.app%2fblog%2fmarkdown-syntax%2f
-          - icon: fab fa-github
-            url: https://github.com/gurusabarish/hugo-profile
-          - icon: fab fa-twitter
-            url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
+          - icon: lattes-in
+            url: http://lattes.cnpq.br/0069989873499216
+          - icon: fab fa-linkedin-in
+            url: https://www.linkedin.com/in/jeroen-van-de-graaf-77252b8b
+          # - icon: fab fa-github
+          #   url: 
+          # - icon: fab fa-x-twitter
+          #   url: 
 
-      - title: Image Converter
-        content: A web app to convert image to pdf, png to jpg, png to jpg and png to webp without database using django.
-        image: /images/team/converter.jpg
-        featured:
-          name: Demo
-          link: https://django-converter.herokuapp.com
-        badges:
-          - "Django"
-          - "Bootstrap"
+      - name: "Lucas Fraga"
+        role: "Senior Researcher"
+        image: images/team/lucas-f.jpeg
+        # featured:
+        #   name: Demo
+        #   link: https://hugo-profile.netlify.app
+        # badges:
+        #   - "Hugo"
         links:
+          - icon: lattes-in
+            url: http://lattes.cnpq.br/4883546536715160
+          - icon: fab fa-linkedin-in
+            url: https://www.linkedin.com/in/lucas-fraga-417343184
           - icon: fab fa-github
-            url: https://github.com/gurusabarish/converter
+            url: https://github.com/peixotofraga
+          - icon: fab fa-x-twitter
+            url: http://x.com/zklucas_
 
-      - title: Hugo Profile V2
-        content: A clean and simple Hugo template for personal portfolio and blog.
-        image: /images/team/profile2.jpg
-        featured:
-          name: Demo V2
-          link: https://hugo-profile-2.netlify.app
-        badges:
-          - "Hugo"
-          - "Bootstrap"
-          - "Javascript"
+      - name: "Gabriel Faria"
+        role: "Junior Researcher & Developer"
+        image: images/team/gabriel-f.jpeg
+        # featured:
+        #   name: Demo
+        #   link: https://hugo-profile.netlify.app
+        # badges:
+        #   - "Hugo"
         links:
+          # - icon: lattes-in
+          #   url: 
+          - icon: fab fa-linkedin-in
+            url: https://www.linkedin.com/in/gabriel-faria-73812723a
           - icon: fab fa-github
-            url: https://github.com/gurusabarish/HugoProfileV2
+            url: https://github.com/fariamg
+          # - icon: fab fa-x-twitter
+          #   url: 
+
+      - name: "Lucas Paulo"
+        role: "Junior Researcher"
+        image: images/team/lucas-p.jpeg
+        # featured:
+        #   name: Demo
+        #   link: https://hugo-profile.netlify.app
+        # badges:
+        #   - "Hugo"
+        links:
+          # - icon: lattes-in
+          #   url: 
+          - icon: fab fa-linkedin-in
+            url: https://www.linkedin.com/in/lucaspaulo-ufmg
+          - icon: fab fa-github
+            url: https://github.com/lucaspaulo1
+          # - icon: fab fa-x-twitter
+          #   url: 
+
+      - name: "Luiz Eduardo"
+        role: "Junior Researcher"
+        image: images/team/luiz-e.jpeg
+        # featured:
+        #   name: Demo
+        #   link: https://hugo-profile.netlify.app
+        # badges:
+        #   - "Hugo"
+        links:
+          - icon: lattes-in
+            url: http://lattes.cnpq.br/7192079531651561
+          # - icon: fab fa-linkedin-in
+          #   url: 
+          # - icon: fab fa-github
+          #   url: 
+          # - icon: fab fa-x-twitter
+          #   url: 
+
+      - name: "Heitor Maciel"
+        role: "Junior Researcher"
+        image: images/team/heitor-m.jpeg
+        # featured:
+        #   name: Demo
+        #   link: https://hugo-profile.netlify.app
+        # badges:
+        #   - "Hugo"
+        links:
+          # - icon: lattes-in
+          #   url: 
+          - icon: fab fa-linkedin-in
+            url: https://br.linkedin.com/in/heitor-maciel-35ba092a5
+          # - icon: fab fa-github
+          #   url: 
+          # - icon: fab fa-x-twitter
+          #   url: 
+
+      - name: "Christian Vieira"
+        role: "Junior Researcher"
+        image: images/team/christian-v.jpeg
+        # featured:
+        #   name: Demo
+        #   link: https://hugo-profile.netlify.app
+        # badges:
+        #   - "Hugo"
+        links:
+          # - icon: lattes-in
+          #   url: 
+          - icon: fab fa-linkedin-in
+            url: https://www.linkedin.com/in/chris-vieira-012248363/
+          # - icon: fab fa-github
+          #   url: 
+          # - icon: fab fa-x-twitter
+          #   url: 
 
   #Contact
   contact:
