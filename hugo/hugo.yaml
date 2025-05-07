@@ -132,7 +132,7 @@ params:
       disableExperience: false
       disableEducation: false
       disableTeam: false
-      disableAchievements: false
+      disableProjects: false
       disableContact: false
 
   # Hero
@@ -290,8 +290,8 @@ params:
           enable: true
           url: "https://example.com"
 
-  # Achievements
-  achievements:
+  # Projects
+  projects:
     enable: true
     # title: "Custom Name"
     items:
