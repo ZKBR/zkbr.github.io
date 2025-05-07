@@ -76,7 +76,23 @@ header .navbar.animate {
     max-width: 100%;
 }
 #hero .content.animate {
+    animation: fade-in 1s ease-out;
+}
+#hero .content.animate .delay {
+    opacity: 0;
+    animation: fade-in 1s ease-out 1s forwards;
+}
+#hero .content.animate .fade-left {
     animation: fade-left 1s ease-out;
+}
+#hero .content.animate .fade-right {
+    animation: fade-right 1s ease-out;
+}
+#hero .content.animate .fade-up {
+    animation: fade-up 1s ease-out;
+}
+#hero .content.animate .fade-bottom {
+    animation: fade-bottom 1s ease-out;
 }
 
 #hero .hero-bottom-svg {
