@@ -138,11 +138,12 @@ params:
   # Hero
   hero:
     enable: true
+    # logo: "zkbr.svg"
+    logoTop: "zkbr-top.svg"
+    logoBottom: "zkbr-bottom.svg"
     title: "ZKBR"
     subtitle: "Zero-Knowledge and Blockchain Research Group"
     content: ""
-    bottomImage:
-      enable: false
     # button:
     #   enable: true
     #   name: "Resume"
