@@ -2,19 +2,20 @@
 <section id="hero" class="d-flex py-5 align-items-center">
     <div class="container px-3 px-sm-5 px-md-5 px-lg-5 pt-lg-3">
         <div class="row justify-content-center">
-            <div class="d-flex flex-column col-sm-12 col-md-12 col-lg-8 content p-0 gap-3 {{ if .Site.Params.animate }}animate{{ end }}" id="primary-font" style="contain: layout;">
-                {{ if or .Site.Params.hero.logo (and .Site.Params.hero.logoTop .Site.Params.hero.logoBottom) }}
-                <div id="heroLogo">
-                    {{ if .Site.Params.hero.logo }}
+            <div class="d-flex flex-column col-sm-12 col-md-12 col-lg-8 content p-0 gap-3 {{ if .Site.Params.animate }}animate{{ end }}" id="primary-font">
+                {{ if .Site.Params.hero.logo }}
+                <div id="heroLogo" style="contain: layout;">
+                    {{ range .Site.Params.hero.logo }}
+                    <img src="{{ .src }}" class="img-fluid w-100{{ if .zIndex }} z-{{ .zIndex }}{{ end }}{{ if eq .zIndex 0 }} position-relative{{ else }} position-absolute{{ end }}{{ if .type }} fade-{{ .type }}{{ end }}" alt="" >
+                    {{ else }}
                     <img src="{{ .Site.Params.hero.logo }}" class="img-fluid w-100" alt="">
-                    {{ else if and .Site.Params.hero.logoTop .Site.Params.hero.logoBottom }}
-                    <img src="{{ .Site.Params.hero.logoBottom }}" class="img-fluid w-100 z-1 position-absolute {{ if .Site.Params.animate }}fade-bottom{{ end }}" alt="" >
-                    <img src="{{ .Site.Params.hero.logoTop }}" class="img-fluid w-100 z-0 position-relative {{ if .Site.Params.animate }}fade-up{{ end }}" alt="">
                     {{ end }}
+                    <!-- <img src="{{ .Site.Params.hero.logoBottom }}" class="img-fluid w-100 z-1 position-absolute {{ if .Site.Params.animate }}fade-bottom{{ end }}" alt="" >
+                    <img src="{{ .Site.Params.hero.logoTop }}" class="img-fluid w-100 z-0 position-relative {{ if .Site.Params.animate }}fade-up{{ end }}" alt=""> -->
                 </div>
                 {{ end }}
-                <div class="text-center {{ if or .Site.Params.hero.logo (and .Site.Params.hero.logoTop .Site.Params.hero.logoBottom) }}delay{{ end }}">
-                    {{ if not (or .Site.Params.hero.logo (and .Site.Params.hero.logoTop .Site.Params.hero.logoBottom)) }}
+                <div id="heroText" class="text-center{{ if .Site.Params.hero.logo }} delay{{ end }}">
+                    {{ if not .Site.Params.hero.logo }}
                     <h1>
                         {{ .Site.Params.hero.title }}
                     </h1>
