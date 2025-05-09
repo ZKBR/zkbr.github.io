@@ -2,7 +2,6 @@
 title = 'Benchmarking the Performance of zkVMs'
 date = '2025-05-07T11:59:14-03:00'
 draft = false
-categorias = ['projeto']
 projetos = ['cdbc']
 status = ['em andamento']
 tags = ['blockchain']

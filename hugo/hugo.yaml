@@ -4,7 +4,6 @@ title: "ZKBR"
 theme: hugo-profile
 
 taxonomies:
-  categoria: "categorias"
   projeto: "projetos"
   status: "status"
   tag: "tags"
@@ -39,13 +38,8 @@ Menus:
     - identifier: blog
       name: Blog
       title: Blog posts
-      url: /blogs
+      url: /blog
       weight: 1
-    - identifier: gallery
-      name: Gallery
-      title: Blog posts
-      url: /gallery
-      weight: 2
     #Dropdown menu
     # - identifier: dropdown
     #   title: Example dropdown menu
@@ -119,9 +113,9 @@ params:
   # If you want to customize the menu, you can change it here
   navbar:
     align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
-    brandLogo: "zkbr.svg" # Logo for the brand | default is the favicon variable
+    brandLogo: /zkbr.svg # Logo for the brand | default is the favicon variable
     showBrandLogo: true # Show brand logo in nav bar | default is true
-    brandName: "ZKBR" # Brand name for the brand | default is the title variable
+    brandName: ZKBR # Brand name for the brand | default is the title variable
     showBrandName: false # Show brand name in nav bar | default is true
     disableSearch: false
     # searchPlaceholder: "Search"
@@ -138,12 +132,23 @@ params:
   # Hero
   hero:
     enable: true
-    # logo: "zkbr.svg"
-    logoTop: "zkbr-top.svg"
-    logoBottom: "zkbr-bottom.svg"
-    title: "ZKBR"
-    subtitle: "Zero-Knowledge and Blockchain Research Group"
-    content: ""
+    # logo: zkbr.svg
+    logo:
+      - src: zkbr-top-front.svg
+        type: left
+        zIndex: 3
+      - src: zkbr-bottom-front.svg
+        type: right
+        zIndex: 2
+      - src: zkbr-top-back.svg
+        type: left
+        zIndex: 1
+      - src: zkbr-bottom-back.svg
+        type: right
+        zIndex: 0
+    title: ZKBR
+    subtitle: Zero-Knowledge and Blockchain Research Group
+    content: 
     # button:
     #   enable: true
     #   name: "Resume"
@@ -163,7 +168,6 @@ params:
   # About
   about:
     enable: true
-    title: "About Us"
     # image: "/images/me.png"
     content: |-
       Our research group is dedicated to exploring the theoretical foundations and practical applications of blockchain technology. This includes in-depth studies of major cryptocurrencies such as Bitcoin and Ethereum, as well as other emerging digital assets. We aim to unravel the core technologies that power these systems, including consensus mechanisms, cryptographic protocols, and smart contract platforms. Beyond the technical aspects, we also investigate the broader societal implications of blockchain adoption, such as its impact on finance, governance, privacy, and decentralization. Through our work, we strive to contribute to a deeper understanding of this transformative technology and its potential to reshape the future.
@@ -181,29 +185,26 @@ params:
   # Projects
   projects:
     enable: true
-    # title: "Custom Name"
     items:
-      - name: "Benchmarking the Performance of zkVMs"
-        description: "TODO"
+      - name: Benchmarking the Performance of zkVMs
+        description: TODO
         url: projeto/benchmark/
         # image: /images/project.jpg
-      - name: "Privacy-Preserving Central Bank Digital Currencies"
-        description: "TODO"
+      - name: Privacy-Preserving Central Bank Digital Currencies
+        description: TODO
         url: projeto/cbdc/
         # image: /images/project.jpg
-      - name: "Scalable Attestation for Edited Images"
-        description: "TODO"
+      - name: Scalable Attestation for Edited Images
+        description: TODO
         url: projeto/images/
         # image: /images/project.jpg
 
   # team
   team:
-    enable: true
-    # title: "Custom Name"
     items:
-      - name: "Jeroen van de Graaf"
-        role: "Lead Researcher"
-        image: images/team/jeroen-g.jpeg
+      - name: Jeroen van de Graaf
+        role: Lead Researcher
+        image: images/team/jeroen.jpeg
         # featured:
         #   name: Demo
         #   link: https://hugo-profile.netlify.app
@@ -219,14 +220,9 @@ params:
           # - icon: fab fa-x-twitter
           #   url: 
 
-      - name: "Lucas Fraga"
-        role: "Senior Researcher"
+      - name: Lucas Fraga
+        role: Senior Researcher
         image: images/team/lucas-f.jpeg
-        # featured:
-        #   name: Demo
-        #   link: https://hugo-profile.netlify.app
-        # badges:
-        #   - "Hugo"
         links:
           - icon: lattes-in
             url: http://lattes.cnpq.br/4883546536715160
@@ -237,14 +233,22 @@ params:
           - icon: fab fa-x-twitter
             url: http://x.com/zklucas_
 
-      - name: "Gabriel Faria"
-        role: "Junior Researcher & Developer"
-        image: images/team/gabriel-f.jpeg
-        # featured:
-        #   name: Demo
-        #   link: https://hugo-profile.netlify.app
-        # badges:
-        #   - "Hugo"
+      - name: Semar Augusto
+        role: Senior Researcher
+        image: images/team/semar.jpeg
+        links:
+          # - icon: lattes-in
+          #   url: 
+          - icon: fab fa-linkedin-in
+            url: https://www.linkedin.com/in/semar-augusto/
+          - icon: fab fa-github
+            url: https://github.com/semaraugusto
+          - icon: fab fa-x-twitter
+            url: https://x.com/semaraugusto
+
+      - name: Gabriel Faria
+        role: Junior Researcher & Developer
+        image: images/team/gabriel.jpeg
         links:
           # - icon: lattes-in
           #   url: 
@@ -255,14 +259,9 @@ params:
           # - icon: fab fa-x-twitter
           #   url: 
 
-      - name: "Lucas Paulo"
-        role: "Junior Researcher"
+      - name: Lucas Paulo
+        role: Junior Researcher
         image: images/team/lucas-p.jpeg
-        # featured:
-        #   name: Demo
-        #   link: https://hugo-profile.netlify.app
-        # badges:
-        #   - "Hugo"
         links:
           # - icon: lattes-in
           #   url: 
@@ -273,14 +272,9 @@ params:
           # - icon: fab fa-x-twitter
           #   url: 
 
-      - name: "Luiz Eduardo"
-        role: "Junior Researcher"
-        image: images/team/luiz-e.jpeg
-        # featured:
-        #   name: Demo
-        #   link: https://hugo-profile.netlify.app
-        # badges:
-        #   - "Hugo"
+      - name: Luiz Eduardo
+        role: Junior Researcher
+        image: images/team/luiz.jpeg
         links:
           - icon: lattes-in
             url: http://lattes.cnpq.br/7192079531651561
@@ -291,14 +285,9 @@ params:
           # - icon: fab fa-x-twitter
           #   url: 
 
-      - name: "Heitor Maciel"
-        role: "Junior Researcher"
-        image: images/team/heitor-m.jpeg
-        # featured:
-        #   name: Demo
-        #   link: https://hugo-profile.netlify.app
-        # badges:
-        #   - "Hugo"
+      - name: Heitor Maciel
+        role: Junior Researcher
+        image: images/team/heitor.jpeg
         links:
           # - icon: lattes-in
           #   url: 
@@ -309,14 +298,9 @@ params:
           # - icon: fab fa-x-twitter
           #   url: 
 
-      - name: "Christian Vieira"
-        role: "Junior Researcher"
-        image: images/team/christian-v.jpeg
-        # featured:
-        #   name: Demo
-        #   link: https://hugo-profile.netlify.app
-        # badges:
-        #   - "Hugo"
+      - name: Christian Vieira
+        role: Junior Researcher
+        image: images/team/christian.jpeg
         links:
           # - icon: lattes-in
           #   url: 
@@ -343,7 +327,7 @@ params:
 
   footer:
     recentPosts:
-      path: "blogs"
+      path: "blog"
       count: 3
       title: Recent Posts
       enable: true
