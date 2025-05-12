@@ -15,7 +15,7 @@
                     {{ end }}
                     <div class="card-body bg-transparent p-3">
                         <h5 class="card-title{{ if not .description }} no-summary{{ end }}" href="{{ .url }}">
-                            <a class="stretched-link" href="{{ .RelPermalink }}"></a> {{ .name }}
+                            <a class="stretched-link" href="{{ .url }}"></a> {{ .name }}
                         </h5>
                         {{ if .description }}
                         <div class="card-text secondary-font">
