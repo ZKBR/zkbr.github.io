@@ -2,7 +2,7 @@
 title = 'Scalable Attestation for Edited Images: Accelerating Zero-Knowledge C2PA Alternatives'
 date = '2025-05-07T11:59:32-03:00'
 draft = false
-projetos = ['Image Attestation']
+projects = ['Image Attestation']
 status = ['em andamento']
 tags = ['ZK']
 +++

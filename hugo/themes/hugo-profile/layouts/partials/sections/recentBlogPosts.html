@@ -1,38 +1,45 @@
-{{ $recentPostsPath := .Site.Params.recentPosts.path | default "blog" }}
-{{ $currentNumOfrecentPosts := len (where .Site.RegularPages "Type" $recentPostsPath) }} 
-{{ if and (gt $currentNumOfrecentPosts 0) (.Site.Params.recentPosts.enable | default true) }} 
-<div class="container py-3" id="recent-posts">
-    {{ $recentPostsCount := .Site.Params.recentPosts.count | default 3 }}
-    {{ $recentPosts := where .Site.RegularPages "Section" $recentPostsPath | first $recentPostsCount }}
-    <div class="h3 text-center text-secondary py-3">
-        {{ .Site.Params.recentPosts.title | default "Recent Posts" }}
-    </div>
-    <div class="row justify-content-center">
-        {{ range $recentPosts }}
-        <div class="col-lg-4 col-md-6 pt-2">
-            <div class="card h-100">
-                {{ if and (not (.Site.Params.recentPosts.disableFeaturedImage | default false)) (.Params.image) }}
-                <div class="card-header">
-                    <a href="{{ .RelPermalink }}">
-                        <img src="{{ .Params.image }}" class="card-img-top" alt="{{ .Title }}">
-                    </a>
-                </div>
-                {{ end }}
-                <div class="card-body bg-transparent p-3 shadow-sm">
-                    <a href="{{ .RelPermalink }}" class="primary-font card-title">
-                        <h5 class="card-title bg-transparent" title="{{ .Title }}">{{ .Title | truncate 25 }}</h5>
-                    </a>
-                    <div class="card-text secondary-font">
-                        <p>{{ .Summary | truncate 300}}</p>
+{{ if .Site.Params.recentPosts.enable | default true }}
+{{ if gt (len (where .Site.RegularPages "Type" .Site.Params.recentPosts.path)) 0 }}
+<section id="recent-posts" class="py-5">
+    <div class="container">
+        {{ $recentPostsCount := .Site.Params.recentPosts.count | default 3 }}
+        <h3 class="text-center text-secondary py-3">
+            {{ .Site.Params.recentPosts.title | default "Recent Posts" }}
+        </h3>
+        <div class="row justify-content-center px-3 px-md-5">
+            {{ range where .Site.RegularPages "Section" .Site.Params.recentPosts.path | first $recentPostsCount }}
+            <div class="col-lg-4 col-md-6 my-3">
+                <div class="card my-3 h-100" title="{{ .Title }}">
+                    {{ if and (not (.Site.Params.recentPosts.disableFeaturedImage | default false)) (.Params.image) }}
+                    <div class="card-header">
+                        <img class="card-img-top" src="{{ .Params.image }}" alt="{{ .Title }}">
+                    </div>
+                    {{ end }}
+                    <div class="card-body bg-transparent p-3">
+                        <h5 class="card-title{{ if not .Summary }} no-summary{{ end }}">
+                            {{ .Title | truncate 25 }}
+                        </h5>
+                        {{ if .Summary }}
+                        <div class="card-text secondary-font">
+                            <p>{{ .Summary | truncate 300}}</p>
+                        </div>
+                        {{ end }}
+                    </div>
+                    {{ if .Params.tags }}
+                    <div class="card-badges bg-transparent p-3">
+                        {{ range .Params.tags }}
+                        <a class="badge badge-secondary" href="/tags/{{ . }}">{{ . }}</a>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                    <div class="card-footer bg-transparent p-3">
+                        <a class="m-1 mx-2 stretched-link" href="{{ .RelPermalink }}">{{ .Date.Format (.Site.Params.datesFormat.articleList | default "January 2, 2006") }}</a>
                     </div>
                 </div>
-                <div class="mt-auto card-footer">
-                    <span class="float-start">{{ .Date.Format (.Site.Params.datesFormat.articleRecent | default "January 2, 2006") }}</span>
-                    <a href="{{ .RelPermalink }}" class="float-end btn btn-outline-info btn-sm">{{ .Site.Params.terms.read | default "Read" }}</a>
-                </div>
             </div>
+            {{ end }}
         </div>
-        {{ end }}
     </div>
-</div>
+</section>
+{{ end }}
 {{ end }}

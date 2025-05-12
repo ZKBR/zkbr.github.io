@@ -2,7 +2,7 @@
 title = 'Benchmarking the Performance of zkVMs'
 date = '2025-05-07T11:59:14-03:00'
 draft = false
-projetos = ['Benchmark']
+projects = ['Benchmark']
 status = ['em andamento']
 tags = ['Blockchain']
 +++

@@ -4,7 +4,7 @@ title: "ZKBR"
 theme: hugo-profile
 
 taxonomies:
-  projeto: "projetos"
+  project: "projects"
   status: "status"
   tag: "tags"
 
@@ -26,7 +26,7 @@ enableRobotsTXT: true
     #shortname: your-disqus-shortname
 
 pagination:
-  pagerSize: 12
+  pagerSize: 6
 
 markup:
   goldmark:
@@ -88,7 +88,7 @@ params:
     fontSize: 1.2rem # default: 1rem
     fontWeight: 400 # default: 400
     lineHeight: 1.5 # default: 1.5
-    textAlign: justify # default: left
+    textAlign: left # default: left
 
   # color preference
   # When using hex codes for colors, quotations must be used along with the # sign
@@ -186,16 +186,16 @@ params:
     enable: true
     items:
       - name: Benchmarking the Performance of zkVMs
-        description: TODO
-        url: projeto/benchmark/
+        description:
+        url: project/benchmark/
         # image: /images/project.jpg
       - name: Privacy-Preserving Central Bank Digital Currencies
-        description: TODO
-        url: projeto/cbdc/
+        description:
+        url: project/cbdc/
         # image: /images/project.jpg
       - name: Scalable Attestation for Edited Images
-        description: TODO
-        url: projeto/images/
+        description:
+        url: project/images/
         # image: /images/project.jpg
 
   # team

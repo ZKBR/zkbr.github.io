@@ -1,7 +1,15 @@
+header {
+    position: relative !important;
+}
+
+.showHeaderOnTop {
+    position: sticky !important;
+}
+
 #single {
     padding: 60px 0;
     line-height: 1.7em;
-    font-size: 17px;
+    /* font-size: 17px; */
 }
 
 #single .title > h1 {
@@ -221,7 +229,7 @@
 }
 
 #single aside.toc .toc-content ol li a, #single aside.toc .toc-content ul li a {
-    font-size: 16px;
+    /* font-size: 16px; */
     text-decoration: none;
     color: var(--text-link-color) !important;
     opacity: 0.9;

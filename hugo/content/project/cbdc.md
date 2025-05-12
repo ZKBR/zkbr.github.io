@@ -2,7 +2,7 @@
 title = 'Privacy-Preserving Transactions in Central Bank Digital Currencies (CBDCs)'
 date = '2025-05-07T11:59:07-03:00'
 draft = false
-projetos = ['CBDC']
+projects = ['CBDC']
 status = ['em andamento']
 tags = ['Blockchain', 'ZK']
 +++
