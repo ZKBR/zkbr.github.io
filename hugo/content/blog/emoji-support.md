@@ -5,6 +5,7 @@ draft: false
 github_link: "https://github.com/gurusabarish/hugo-profile"
 author: "Gurusabarish"
 tags:
+  - zk
   - Emoji support
   - Sample
   - example

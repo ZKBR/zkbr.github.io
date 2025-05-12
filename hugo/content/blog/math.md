@@ -4,6 +4,7 @@ date: 2022-12-09T19:53:33+05:30
 draft: false
 author: "Gurusabarish"
 tags:
+  - zk
   - Markdown syntax
   - Mathjax
   - example

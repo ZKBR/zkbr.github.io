@@ -23,10 +23,6 @@
                 {{ .Params.author }}
                 <small>|</small>
               {{ end }}
-              {{ .Date.Format (.Site.Params.datesFormat.article | default "Jan 2, 2006") }}
-
-              {{ if or (.Site.Params.singlePages.readTime.enable | default true) (.Params.enableReadingTime) }}
-              {{ end }}
             </div>
           </div>
           {{ if .Params.image }}
@@ -79,9 +75,5 @@
     stickySideBarElem.style.top = "50px";
   }
 </script>
-
-{{ if or (.Site.Params.singlePages.readTime.enable | default true) (.Params.enableReadingTime) }}
-<script src="{{.Site.Params.staticPath}}/js/readingTime.js"></script>
-{{end}}
 
 {{ end }}
