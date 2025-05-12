@@ -133,17 +133,17 @@ params:
     enable: true
     # logo: zkbr.svg
     logo:
-      - src: zkbr-top-front.svg
-        type: left
-        zIndex: 3
-      - src: zkbr-bottom-front.svg
-        type: right
-        zIndex: 2
-      - src: zkbr-top-back.svg
-        type: left
-        zIndex: 1
       - src: zkbr-bottom-back.svg
         type: right
+        zIndex: 3
+      - src: zkbr-top-back.svg
+        type: left
+        zIndex: 2
+      - src: zkbr-bottom-front.svg
+        type: right
+        zIndex: 1
+      - src: zkbr-top-front.svg
+        type: left
         zIndex: 0
     title: ZKBR
     subtitle: Zero-Knowledge and Blockchain Research Group
