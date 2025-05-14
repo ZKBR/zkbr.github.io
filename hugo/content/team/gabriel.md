@@ -1,6 +1,7 @@
 ---
 name: "Gabriel Faria"
 role: "Junior Researcher & Developer"
+index: 2
 image: /images/team/gabriel.jpeg
 badges: []
 links:

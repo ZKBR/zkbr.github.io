@@ -1,6 +1,7 @@
 ---
 name: "Semar Augusto"
 role: "Senior Researcher"
+index: 1
 image: /images/team/semar.jpeg
 badges: []
 links:

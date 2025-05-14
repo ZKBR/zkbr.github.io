@@ -1,6 +1,7 @@
 ---
 name: "Lucas Paulo"
 role: "Junior Researcher"
+index: 2
 image: /images/team/lucas-p.jpeg
 badges: []
 links:

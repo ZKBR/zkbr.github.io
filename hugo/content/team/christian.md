@@ -1,6 +1,7 @@
 ---
 name: "Christian Vieira"
 role: "Junior Researcher"
+index: 2
 image: /images/team/christian.jpeg
 badges: []
 links:

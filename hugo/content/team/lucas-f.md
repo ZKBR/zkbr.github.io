@@ -1,6 +1,7 @@
 ---
 name: "Lucas Fraga"
 role: "Senior Researcher"
+index: 1
 image: /images/team/lucas-f.jpeg
 badges: []
 links:

@@ -1,6 +1,7 @@
 ---
 name: "Jeroen van de Graaf"
 role: "Lead Researcher"
+index: 0
 image: /images/team/jeroen.jpeg
 badges: []
 links:

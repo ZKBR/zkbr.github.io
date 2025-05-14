@@ -1,6 +1,7 @@
 ---
 name: "Luiz Eduardo"
 role: "Junior Researcher"
+index: 2
 image: /images/team/luiz.jpeg
 badges: []
 links:

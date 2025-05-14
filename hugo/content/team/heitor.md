@@ -1,6 +1,7 @@
 ---
 name: "Heitor Maciel"
 role: "Junior Researcher"
+index: 2
 image: /images/team/heitor.jpeg
 badges: []
 links:
