@@ -1,6 +1,17 @@
-{{ if not .Site.Params.sections.disableTeam | default true }}
-{{ if gt (len (where .Site.RegularPages "Type" "team")) 0 }}
-<section id="team" class="py-5">
+{{ define "head" }}
+<meta name="description" content="Team of {{ .Site.Title }}">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/list.css" media="all">
+
+<!-- fontawesome -->
+<script defer src="{{ .Site.Params.staticPath }}/fontawesome-6/all-6.4.2.js"></script>
+{{ end }}
+
+{{ define "title" }}
+Team | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section id="list-page" class="py-5">
     <div class="container">
         <h3 class="text-center text-secondary py-3">
             Team
@@ -70,5 +81,4 @@
         </div>
     </div>
 </section>
-{{ end }}
 {{ end }}

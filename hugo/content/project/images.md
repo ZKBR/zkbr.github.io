@@ -1,5 +1,5 @@
 ---
-title: "Scalable Attestation for Edited Images: Accelerating Zero-Knowledge C2PA Alternatives"
+name: "Scalable Attestation for Edited Images: Accelerating Zero-Knowledge C2PA Alternatives"
 description: ""
 date: 2025-05-07T12:19:32-03:00
 draft: false

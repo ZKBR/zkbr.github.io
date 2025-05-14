@@ -1,5 +1,5 @@
 ---
-title: "Benchmarking the Performance of zkVMs"
+name: "Benchmarking the Performance of zkVMs"
 description: ""
 date: 2025-05-07T12:19:14-03:00
 draft: false

@@ -1,8 +1,17 @@
-{{ if not .Site.Params.sections.disableAbout | default true }}
-<section id="about" class="py-5">
+{{ define "head" }}
+<meta name="description" content="{{ .Title }} of {{ .Site.Title }}">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/list.css" media="all">
+{{ end }}
+
+{{ define "title" }}
+{{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section id="list-page" class="py-5">
     <div class="container">
         <h3 class="text-center text-secondary py-3">
-            About Us
+            {{ .Title }} teste
         </h3>
         <div class="row text-center justify-content-center px-3 px-md-5">
             <div class="col-lg-10 col-md-10 col-sm-12 my-3">

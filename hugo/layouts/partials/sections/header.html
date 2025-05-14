@@ -86,35 +86,42 @@
                         </li>
                     {{ end }}
 
-                    {{ if and (.Site.Params.about.enable | default false) (not (.Site.Params.navbar.menus.disableAbout | default false)) }}
+                    {{ if not (.Site.Params.sections.disableAbout | default false) }}
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#about" aria-label="about">
+                        <a class="nav-link" href="{{ if .IsHome }}{{ .Site.BaseURL | relURL }}#about{{ else }}/about{{ end }}" aria-label="about">
                             {{ .Site.Params.about.title | default "About" }}
                         </a>
                     </li>
                     {{ end }}
 
-                    {{ if and (.Site.Params.projects.enable | default false) (not (.Site.Params.navbar.menus.disableProjects | default false)) }}
+                    {{ if not (.Site.Params.sections.disableProjects | default false) }}
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#projects"
-                            aria-label="projects">
+                        <a class="nav-link" href="{{ if .IsHome }}{{ .Site.BaseURL | relURL }}#projects{{ else }}/project{{ end }}" aria-label="projects">
                             {{ .Site.Params.projects.title | default "Projects" }}
                         </a>
                     </li>
                     {{ end }}
 
-                    {{ if and (.Site.Params.team.enable | default true) (not (.Site.Params.navbar.menus.disableTeam | default false)) }}
+                    {{ if not (.Site.Params.sections.disableTeam | default false) }}
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{ .Site.BaseURL | relURL }}#team"
-                            aria-label="team">
+                        <a class="nav-link" href="{{ if .IsHome }}{{ .Site.BaseURL | relURL }}#team{{ else }}/team{{ end }}" aria-label="team">
                             {{ .Site.Params.team.title | default "Team" }}
                         </a>
                     </li>
                     {{ end }}
 
-                    {{ if and .Site.Menus.main (.Site.Params.navbar.enableSeparator | default false) }}
+                    {{ if and (.Site.Params.navbar.enableSeparator | default false) (or .Site.Menus.main (not (.Site.Params.sections.disableBlog | default false))) }}
                         <li class="nav-item navbar-text d-none d-lg-block d-xl-block"><div class="nav-link nav-link-sep"></div></li>
                         <div class="dropdown-divider"></div>
+                    {{ end }}
+
+                    {{ if not (.Site.Params.sections.disableBlog | default false) }}
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="{{ if .IsHome }}{{ .Site.BaseURL | relURL }}#recentPosts{{ else }}/blog{{ end }}"
+                            aria-label="blog">
+                            {{ .Site.Params.blog.title | default "Blog" }}
+                        </a>
+                    </li>
                     {{ end }}
 
                     <!-- custom menus from the user -->

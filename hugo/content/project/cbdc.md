@@ -1,5 +1,5 @@
 ---
-title: "Privacy-Preserving Transactions in Central Bank Digital Currencies (CBDCs)"
+name: "Privacy-Preserving Transactions in Central Bank Digital Currencies (CBDCs)"
 description: ""
 date: 2025-05-07T12:19:07-03:00
 draft: false
