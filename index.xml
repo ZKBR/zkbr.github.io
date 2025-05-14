@@ -9,25 +9,88 @@
     <lastBuildDate>Wed, 07 May 2025 12:19:32 -0300</lastBuildDate>
     <atom:link href="https://zkbr.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Scalable Attestation for Edited Images: Accelerating Zero-Knowledge C2PA Alternatives</title>
+      <title></title>
       <link>https://zkbr.github.io/project/images/</link>
       <pubDate>Wed, 07 May 2025 12:19:32 -0300</pubDate>
       <guid>https://zkbr.github.io/project/images/</guid>
       <description>&lt;p&gt;In the age of generative artificial intelligence, ensuring the provenance and authenticity of digital images has emerged as a critical challenge. The Coalition for Content Provenance and Authenticity (C2PA) introduced a signature scheme to address this issue, but it relies on trust when images are edited prior to publication—a near-ubiquitous scenario. Dan Boneh et al. proposed an alternative approach, replacing C2PA signatures with zero-knowledge proofs to verify that edits were applied to a legitimately signed image. While this represents a significant advancement, their method currently processes only one operation at a time, and proof generation remains computationally impractical for real-world use. This work focuses on optimizing the proving time of such verification methods while enabling the seamless composition of multiple editing operations within a single image.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Benchmarking the Performance of zkVMs</title>
+      <title></title>
       <link>https://zkbr.github.io/project/benchmark/</link>
       <pubDate>Wed, 07 May 2025 12:19:14 -0300</pubDate>
       <guid>https://zkbr.github.io/project/benchmark/</guid>
       <description>&lt;p&gt;Verifiable computation outsourcing has become a critical tool in various applications, particularly in scaling blockchain networks like Ethereum. A prominent example is the use of rollups, a layer-2 scaling solution designed to increase Ethereum&amp;rsquo;s transaction throughput. In this approach, transactions are offloaded to a secondary layer that mirrors Ethereum&amp;rsquo;s functionality but operates on a high-performance cluster. To maximize efficiency, hundreds of transactions are batched, compressed, and processed together. The resulting state of this layer-2 ledger is then computed and submitted to the Ethereum mainnet for verification and permanent record-keeping.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Privacy-Preserving Transactions in Central Bank Digital Currencies (CBDCs)</title>
+      <title></title>
       <link>https://zkbr.github.io/project/cbdc/</link>
       <pubDate>Wed, 07 May 2025 12:19:07 -0300</pubDate>
       <guid>https://zkbr.github.io/project/cbdc/</guid>
       <description>&lt;p&gt;Central banks worldwide are exploring the use of blockchain technology to issue and manage digital versions of fiat currencies, known as Central Bank Digital Currencies (CBDCs). However, this endeavor faces significant challenges. While most blockchain systems lack robust privacy protections, those that do offer privacy often do not support smart contracts, which are essential for enabling programmable money and advanced financial applications. Additionally, there is a need to balance privacy with regulatory requirements, such as allowing law enforcement to access transaction data under specific circumstances.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://zkbr.github.io/team/christian/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zkbr.github.io/team/christian/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://zkbr.github.io/team/gabriel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zkbr.github.io/team/gabriel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://zkbr.github.io/team/heitor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zkbr.github.io/team/heitor/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://zkbr.github.io/team/jeroen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zkbr.github.io/team/jeroen/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://zkbr.github.io/team/lucas-f/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zkbr.github.io/team/lucas-f/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://zkbr.github.io/team/lucas-p/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zkbr.github.io/team/lucas-p/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://zkbr.github.io/team/luiz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zkbr.github.io/team/luiz/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title></title>
+      <link>https://zkbr.github.io/team/semar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zkbr.github.io/team/semar/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>About Us</title>
+      <link>https://zkbr.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://zkbr.github.io/about/</guid>
+      <description>&lt;p&gt;Our research group is dedicated to exploring the theoretical foundations and practical applications of blockchain technology. This includes in-depth studies of major cryptocurrencies such as Bitcoin and Ethereum, as well as other emerging digital assets. We aim to unravel the core technologies that power these systems, including consensus mechanisms, cryptographic protocols, and smart contract platforms. Beyond the technical aspects, we also investigate the broader societal implications of blockchain adoption, such as its impact on finance, governance, privacy, and decentralization. Through our work, we strive to contribute to a deeper understanding of this transformative technology and its potential to reshape the future.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

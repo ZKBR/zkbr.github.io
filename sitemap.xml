@@ -2,19 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://zkbr.github.io/status/em-andamento/</loc>
+    <loc>https://zkbr.github.io/project/images/</loc>
     <lastmod>2025-05-07T12:19:32-03:00</lastmod>
   </url><url>
-    <loc>https://zkbr.github.io/projects/image-attestation/</loc>
+    <loc>https://zkbr.github.io/status/in-progress/</loc>
+    <lastmod>2025-05-07T12:19:32-03:00</lastmod>
+  </url><url>
+    <loc>https://zkbr.github.io/tags/project/image-attestation/</loc>
     <lastmod>2025-05-07T12:19:32-03:00</lastmod>
   </url><url>
     <loc>https://zkbr.github.io/project/</loc>
-    <lastmod>2025-05-07T12:19:32-03:00</lastmod>
-  </url><url>
-    <loc>https://zkbr.github.io/projects/</loc>
-    <lastmod>2025-05-07T12:19:32-03:00</lastmod>
-  </url><url>
-    <loc>https://zkbr.github.io/project/images/</loc>
     <lastmod>2025-05-07T12:19:32-03:00</lastmod>
   </url><url>
     <loc>https://zkbr.github.io/status/</loc>
@@ -29,22 +26,42 @@
     <loc>https://zkbr.github.io/</loc>
     <lastmod>2025-05-07T12:19:32-03:00</lastmod>
   </url><url>
-    <loc>https://zkbr.github.io/projects/benchmark/</loc>
-    <lastmod>2025-05-07T12:19:14-03:00</lastmod>
-  </url><url>
     <loc>https://zkbr.github.io/project/benchmark/</loc>
     <lastmod>2025-05-07T12:19:14-03:00</lastmod>
   </url><url>
     <loc>https://zkbr.github.io/tags/blockchain/</loc>
     <lastmod>2025-05-07T12:19:14-03:00</lastmod>
   </url><url>
-    <loc>https://zkbr.github.io/projects/cbdc/</loc>
-    <lastmod>2025-05-07T12:19:07-03:00</lastmod>
+    <loc>https://zkbr.github.io/tags/project/benchmark/</loc>
+    <lastmod>2025-05-07T12:19:14-03:00</lastmod>
   </url><url>
     <loc>https://zkbr.github.io/project/cbdc/</loc>
     <lastmod>2025-05-07T12:19:07-03:00</lastmod>
   </url><url>
+    <loc>https://zkbr.github.io/tags/project/cbdc/</loc>
+    <lastmod>2025-05-07T12:19:07-03:00</lastmod>
+  </url><url>
     <loc>https://zkbr.github.io/blog/</loc>
     <lastmod>2022-12-09T19:53:33+05:30</lastmod>
+  </url><url>
+    <loc>https://zkbr.github.io/team/christian/</loc>
+  </url><url>
+    <loc>https://zkbr.github.io/team/gabriel/</loc>
+  </url><url>
+    <loc>https://zkbr.github.io/team/heitor/</loc>
+  </url><url>
+    <loc>https://zkbr.github.io/team/jeroen/</loc>
+  </url><url>
+    <loc>https://zkbr.github.io/team/lucas-f/</loc>
+  </url><url>
+    <loc>https://zkbr.github.io/team/lucas-p/</loc>
+  </url><url>
+    <loc>https://zkbr.github.io/team/luiz/</loc>
+  </url><url>
+    <loc>https://zkbr.github.io/team/semar/</loc>
+  </url><url>
+    <loc>https://zkbr.github.io/about/</loc>
+  </url><url>
+    <loc>https://zkbr.github.io/team/</loc>
   </url>
 </urlset>

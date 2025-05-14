@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project/Image Attestation on ZKBR</title>
+    <link>https://zkbr.github.io/tags/project/image-attestation/</link>
+    <description>Recent content in Project/Image Attestation on ZKBR</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 May 2025 12:19:32 -0300</lastBuildDate>
+    <atom:link href="https://zkbr.github.io/tags/project/image-attestation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://zkbr.github.io/project/images/</link>
+      <pubDate>Wed, 07 May 2025 12:19:32 -0300</pubDate>
+      <guid>https://zkbr.github.io/project/images/</guid>
+      <description>&lt;p&gt;In the age of generative artificial intelligence, ensuring the provenance and authenticity of digital images has emerged as a critical challenge. The Coalition for Content Provenance and Authenticity (C2PA) introduced a signature scheme to address this issue, but it relies on trust when images are edited prior to publication—a near-ubiquitous scenario. Dan Boneh et al. proposed an alternative approach, replacing C2PA signatures with zero-knowledge proofs to verify that edits were applied to a legitimately signed image. While this represents a significant advancement, their method currently processes only one operation at a time, and proof generation remains computationally impractical for real-world use. This work focuses on optimizing the proving time of such verification methods while enabling the seamless composition of multiple editing operations within a single image.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

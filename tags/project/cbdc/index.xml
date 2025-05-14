@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project/CBDC on ZKBR</title>
+    <link>https://zkbr.github.io/tags/project/cbdc/</link>
+    <description>Recent content in Project/CBDC on ZKBR</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 May 2025 12:19:07 -0300</lastBuildDate>
+    <atom:link href="https://zkbr.github.io/tags/project/cbdc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://zkbr.github.io/project/cbdc/</link>
+      <pubDate>Wed, 07 May 2025 12:19:07 -0300</pubDate>
+      <guid>https://zkbr.github.io/project/cbdc/</guid>
+      <description>&lt;p&gt;Central banks worldwide are exploring the use of blockchain technology to issue and manage digital versions of fiat currencies, known as Central Bank Digital Currencies (CBDCs). However, this endeavor faces significant challenges. While most blockchain systems lack robust privacy protections, those that do offer privacy often do not support smart contracts, which are essential for enabling programmable money and advanced financial applications. Additionally, there is a need to balance privacy with regulatory requirements, such as allowing law enforcement to access transaction data under specific circumstances.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
