@@ -4,7 +4,6 @@ title: "ZKBR"
 theme: hugo-profile
 
 taxonomies:
-  project: "projects"
   status: "status"
   tag: "tags"
 

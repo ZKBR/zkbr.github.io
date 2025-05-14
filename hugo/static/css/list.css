@@ -1,11 +1,3 @@
-header {
-    position: relative !important;
-}
-
-.showHeaderOnTop {
-    position: sticky !important;
-}
-
 /* list-page */
 
 #list-page h3 {
@@ -73,4 +65,11 @@ header {
 
 #list-page .float-end .btn:focus {
     box-shadow: none !important;
+}
+
+/* badges */
+
+.badge.badge-secondary {
+    position: relative;
+    z-index: 2;
 }

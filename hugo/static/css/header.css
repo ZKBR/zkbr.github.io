@@ -1,12 +1,13 @@
 header {
     z-index: 10;
-    position: fixed;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
 }
 
 .showHeaderOnTop {
+    position: sticky;
     box-shadow: 0px 8px 28px rgba(15, 80, 100, 0.16);
 }
 
