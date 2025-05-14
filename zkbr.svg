@@ -1,0 +1,21 @@
+<svg width="270" height="85" viewBox="0 0 270 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M215 30V80" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M145 30V80" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M75 30V80" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M215 55L265 5" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M145 55L195 5" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M75 55L125 5" stroke="#009900" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M265 80L215 30" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M145 80L195 30" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M195 30H145" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M125 80L75 30" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5 80H55" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55 30L5 80" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M265 5H215" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M215 55V5" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M145 5V55" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M145 5H195" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M75 5V55" stroke="#009900" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5 55L55 5" stroke="#009900" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55 5H5" stroke="#009900" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

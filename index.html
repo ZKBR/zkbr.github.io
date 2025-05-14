@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="generator" content="Hugo 0.147.2"><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href=/fav.png type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="/css/font.css" media="all">
+
+
+
+<meta property="og:url" content="https://zkbr.github.io/">
+  <meta property="og:site_name" content="ZKBR">
+  <meta property="og:title" content="ZKBR">
+  <meta property="og:description" content="Zero-Knowledge and Blockchain Research Group">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ZKBR">
+  <meta name="twitter:description" content="Zero-Knowledge and Blockchain Research Group">
+
+
+<link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="/css/theme.css" media="all">
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --text-link-color: #007bff;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #007bff;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --text-link-color-dark: #ffffff;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        height: 0px;
+        width: 8px;
+        background-color: var(--background-color);
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: #b0b0b0;
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+
+
+<meta name="description" content=Zero-Knowledge&#32;and&#32;Blockchain&#32;Research&#32;Group>
+<link rel="stylesheet" href="/css/index.css" media="all">
+
+
+<script defer src="/fontawesome-6/all-6.4.2.js"></script>
+
+
+  
+  
+
+  <title>
+ZKBR
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  false ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;
+    });
+</script>
+
+
+
+<header id="profileHeader">
+    <nav class="py-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            
+            <a class="navbar-brand primary-font text-wrap" href="/">
+                
+                <img src="/zkbr.svg" height="30"
+                    class="d-inline-block align-top">
+                
+                
+            </a>
+
+            
+                <div>
+                    <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Ctrl &#43; k to Search...'
+                        aria-label="Search" oninput="searchOnChange(event)">
+                </div>
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+                        <li class="nav-item navbar-text d-block d-md-none">
+                            <div class="nav-link">
+                                <input id="search" autocomplete="off" class="form-control mr-sm-2" placeholder='Ctrl &#43; k to Search...' aria-label="Search" oninput="searchOnChange(event)">
+                            </div>
+                        </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#about" aria-label="about">
+                            About
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#projects"
+                            aria-label="projects">
+                            Projects
+                        </a>
+                    </li>
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#team"
+                            aria-label="team">
+                            Team
+                        </a>
+                    </li>
+                    
+
+                    
+                        <li class="nav-item navbar-text d-none d-lg-block d-xl-block"><div class="nav-link nav-link-sep"></div></li>
+                        <div class="dropdown-divider"></div>
+                    
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="hero" class="d-flex py-5 align-items-center">
+    <div class="container px-3 px-sm-5 px-md-5 px-lg-5 pt-lg-3">
+        <div class="row justify-content-center">
+            <div class="d-flex flex-column col-sm-12 col-md-12 col-lg-8 content px-3 gap-3 animate" id="primary-font">
+                
+                <div id="heroLogo" style="contain: layout;">
+                    
+                    <img src="zkbr-bottom-back.svg" class="img-fluid w-100 z-3 position-absolute fade-right" alt="" >
+                    
+                    <img src="zkbr-top-back.svg" class="img-fluid w-100 z-2 position-absolute fade-left" alt="" >
+                    
+                    <img src="zkbr-bottom-front.svg" class="img-fluid w-100 z-1 position-absolute fade-right" alt="" >
+                    
+                    <img src="zkbr-top-front.svg" class="img-fluid w-100 position-relative fade-left" alt="" >
+                    
+                    
+                </div>
+                
+                <div id="heroText" class="text-center delay">
+                    
+                    <h2>
+                        Zero-Knowledge and Blockchain Research Group
+                    </h2>
+                    <p class="hero-content">
+                        
+                    </p>
+                    <div class="row">
+                        <div class="col-auto h-100">
+                            
+                        </div>
+                        <div class="col-auto px-0 h-100"><span>
+    
+
+    
+</span>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-0 py-sm-5">
+    <div class="container bg-transparent">
+        <h3 class="text-center bg-transparent">About Us</h3>
+        <div class="bg-transparent row justify-content-center px-3 py-5">
+            
+            <div class="col-sm-12 col-md-12 col-lg-8 content">
+                Our research group is dedicated to exploring the theoretical foundations and practical applications of blockchain technology. This includes in-depth studies of major cryptocurrencies such as Bitcoin and Ethereum, as well as other emerging digital assets. We aim to unravel the core technologies that power these systems, including consensus mechanisms, cryptographic protocols, and smart contract platforms. Beyond the technical aspects, we also investigate the broader societal implications of blockchain adoption, such as its impact on finance, governance, privacy, and decentralization. Through our work, we strive to contribute to a deeper understanding of this transformative technology and its potential to reshape the future.
+
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="py-5">
+    <div class="container">
+        <h3 class="text-center text-secondary py-3">
+            Projects
+        </h3>
+        <div class="row justify-content-center px-3 px-md-5">
+            
+            <div class="col-lg-4 col-md-6 my-3">
+                <div class="card my-3 h-100" title="Benchmarking the Performance of zkVMs">
+                    
+                    <div class="card-body bg-transparent p-3">
+                        <h5 class="card-title no-summary" href="project/benchmark/">
+                            <a class="stretched-link" href="project/benchmark/"></a> Benchmarking the Performance of zkVMs
+                        </h5>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 my-3">
+                <div class="card my-3 h-100" title="Privacy-Preserving Central Bank Digital Currencies">
+                    
+                    <div class="card-body bg-transparent p-3">
+                        <h5 class="card-title no-summary" href="project/cbdc/">
+                            <a class="stretched-link" href="project/cbdc/"></a> Privacy-Preserving Central Bank Digital Currencies
+                        </h5>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 my-3">
+                <div class="card my-3 h-100" title="Scalable Attestation for Edited Images">
+                    
+                    <div class="card-body bg-transparent p-3">
+                        <h5 class="card-title no-summary" href="project/images/">
+                            <a class="stretched-link" href="project/images/"></a> Scalable Attestation for Edited Images
+                        </h5>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<section id="team" class="py-5">
+    <div class="container">
+        <h3 class="text-center text-secondary py-3">
+            Team
+        </h3>
+        <div class="row justify-content-center px-3 px-md-5">
+            
+            <div class="col-lg-3 col-md-6 my-3">
+                <div class="card my-3 h-100" title="Jeroen van de Graaf">
+                    <div class="card-header">
+                        <img class="card-img-top" src="images/team/jeroen.jpeg" alt="Jeroen van de Graaf">
+                    </div>
+                    <div class="card-body bg-transparent p-3">
+                        <h5 class="card-title">
+                            Jeroen van de Graaf
+                        </h5>
+                        <div class="card-text secondary-font">
+                            Lead Researcher
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="card-footer bg-transparent p-3">
+                        
+                        <a class="m-1 mx-2 stretched-link" href="http://lattes.cnpq.br/0069989873499216" target="_blank">
+                            
+                                <svg class="svg-inline--fa" aria-hidden="true" focusable="false" role="img" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="currentColor" d="m97.871854 434.73261c-46.337391-94.94819-73.906252-152.28892-73.906252-153.71232 0-2.32214 2.831558-1.99974 30.672084 3.45957 48.965204 9.61389 75.126384 12.32631 118.735104 12.34258 57.69707.0159 104.6807-9.1222 141.18473-27.4842 19.31194-9.71476 30.92555-18.32755 40.43708-29.99337 11.716-14.37824 15.47977-24.28004 15.61512-40.94646.11867-15.85237-2.01801-24.21167-11.19035-43.60874-3.62892-7.66433-6.8168-16.46265-7.12098-19.54964-.47493-4.96814-.0684-5.68084 3.59445-6.10361 8.00292-.94846 47.50732 37.40224 62.05491 60.24069 25.07592 39.38574 27.11161 81.99337 5.88408 123.1953-13.03903 25.31314-27.44972 42.82712-51.57723 62.73362-40.09844 33.06211-86.70754 56.08608-151.06833 74.63514-34.5707 9.97024-90.47131 22.05883-101.98402 22.05883-2.44075 0-7.02006-8.00296-21.295953-37.28315l-.03402.0151zm12.904156-153.1207c-45.015874-5.83193-82.790737-10.90244-83.96064-11.27504-1.999745-.64427-9.154693-24.5158-13.190597-43.94683-1.016871-4.91744-2.509183-17.93873-3.322753-28.9583-3.6303611-49.17042 7.068779-83.16526 35.739145-113.734503 48.542406-51.712057 152.475965-58.003206 269.736485-16.327779 20.58274 7.324215 28.75504 12.410983 24.975 15.580668-2.79708 2.339846-21.75315 2.305883-54.50916-.102387-51.20464-3.763759-90.18335 3.357226-110.27491 20.176211-30.58742 25.60158-25.92345 81.72365 13.53071 162.68196 4.27316 8.76586 8.57881 17.34466 9.56318 19.09094 2.28966 4.01773.62803 7.74899-3.3572 7.56196-1.69755-.0813-39.91486-4.91203-84.92926-10.74592zm151.01614-44.04726c-35.92814-6.45997-68.22691-28.7388-78.65437-54.22127-5.00209-12.24165-4.76437-28.2131.57585-37.77483 4.83279-8.64723 17.3107-18.64993 28.48481-22.83843 18.59924-6.96791 51.17019-4.18853 74.90688 6.40975 22.53229 10.05487 42.50672 27.73816 49.93183 44.18457 9.52925 21.10841 1.59321 44.65955-18.82072 55.90059-13.5307 7.44285-39.82676 11.32572-56.44249 8.34109h.0181z"/>
+                                </svg>
+                            
+                        </a>
+                        
+                        <a class="m-1 mx-2 stretched-link" href="https://www.linkedin.com/in/jeroen-van-de-graaf-77252b8b" target="_blank">
+                            
+                                <i class="fab fa-linkedin-in"></i>
+                            
+                        </a>
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 my-3">
+                <div class="card my-3 h-100" title="Lucas Fraga">
+                    <div class="card-header">
+                        <img class="card-img-top" src="images/team/lucas-f.jpeg" alt="Lucas Fraga">
+                    </div>
+                    <div class="card-body bg-transparent p-3">
+                        <h5 class="card-title">
+                            Lucas Fraga
+                        </h5>
+                        <div class="card-text secondary-font">
+                            Senior Researcher
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="card-footer bg-transparent p-3">
+                        
+                        <a class="m-1 mx-2 stretched-link" href="http://lattes.cnpq.br/4883546536715160" target="_blank">
+                            
+                                <svg class="svg-inline--fa" aria-hidden="true" focusable="false" role="img" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="currentColor" d="m97.871854 434.73261c-46.337391-94.94819-73.906252-152.28892-73.906252-153.71232 0-2.32214 2.831558-1.99974 30.672084 3.45957 48.965204 9.61389 75.126384 12.32631 118.735104 12.34258 57.69707.0159 104.6807-9.1222 141.18473-27.4842 19.31194-9.71476 30.92555-18.32755 40.43708-29.99337 11.716-14.37824 15.47977-24.28004 15.61512-40.94646.11867-15.85237-2.01801-24.21167-11.19035-43.60874-3.62892-7.66433-6.8168-16.46265-7.12098-19.54964-.47493-4.96814-.0684-5.68084 3.59445-6.10361 8.00292-.94846 47.50732 37.40224 62.05491 60.24069 25.07592 39.38574 27.11161 81.99337 5.88408 123.1953-13.03903 25.31314-27.44972 42.82712-51.57723 62.73362-40.09844 33.06211-86.70754 56.08608-151.06833 74.63514-34.5707 9.97024-90.47131 22.05883-101.98402 22.05883-2.44075 0-7.02006-8.00296-21.295953-37.28315l-.03402.0151zm12.904156-153.1207c-45.015874-5.83193-82.790737-10.90244-83.96064-11.27504-1.999745-.64427-9.154693-24.5158-13.190597-43.94683-1.016871-4.91744-2.509183-17.93873-3.322753-28.9583-3.6303611-49.17042 7.068779-83.16526 35.739145-113.734503 48.542406-51.712057 152.475965-58.003206 269.736485-16.327779 20.58274 7.324215 28.75504 12.410983 24.975 15.580668-2.79708 2.339846-21.75315 2.305883-54.50916-.102387-51.20464-3.763759-90.18335 3.357226-110.27491 20.176211-30.58742 25.60158-25.92345 81.72365 13.53071 162.68196 4.27316 8.76586 8.57881 17.34466 9.56318 19.09094 2.28966 4.01773.62803 7.74899-3.3572 7.56196-1.69755-.0813-39.91486-4.91203-84.92926-10.74592zm151.01614-44.04726c-35.92814-6.45997-68.22691-28.7388-78.65437-54.22127-5.00209-12.24165-4.76437-28.2131.57585-37.77483 4.83279-8.64723 17.3107-18.64993 28.48481-22.83843 18.59924-6.96791 51.17019-4.18853 74.90688 6.40975 22.53229 10.05487 42.50672 27.73816 49.93183 44.18457 9.52925 21.10841 1.59321 44.65955-18.82072 55.90059-13.5307 7.44285-39.82676 11.32572-56.44249 8.34109h.0181z"/>
+                                </svg>
+                            
+                        </a>
+                        
+                        <a class="m-1 mx-2 stretched-link" href="https://www.linkedin.com/in/lucas-fraga-417343184" target="_blank">
+                            
+                                <i class="fab fa-linkedin-in"></i>
+                            
+                        </a>
+                        
+                        <a class="m-1 mx-2 stretched-link" href="https://github.com/peixotofraga" target="_blank">
+                            
+                                <i class="fab fa-github"></i>
+                            
+                        </a>
+                        
+                        <a class="m-1 mx-2 stretched-link" href="http://x.com/zklucas_" target="_blank">
+                            
+                                <i class="fab fa-x-twitter"></i>
+                            
+                        </a>
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 my-3">
+                <div class="card my-3 h-100" title="Semar Augusto">
+                    <div class="card-header">
+                        <img class="card-img-top" src="images/team/semar.jpeg" alt="Semar Augusto">
+                    </div>
+                    <div class="card-body bg-transparent p-3">
+                        <h5 class="card-title">
+                            Semar Augusto
+                        </h5>
+                        <div class="card-text secondary-font">
+                            Senior Researcher
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="card-footer bg-transparent p-3">
+                        
+                        <a class="m-1 mx-2 stretched-link" href="https://www.linkedin.com/in/semar-augusto/" target="_blank">
+                            
+                                <i class="fab fa-linkedin-in"></i>
+                            
+                        </a>
+                        
+                        <a class="m-1 mx-2 stretched-link" href="https://github.com/semaraugusto" target="_blank">
+                            
+                                <i class="fab fa-github"></i>
+                            
+                        </a>
+                        
+                        <a class="m-1 mx-2 stretched-link" href="https://x.com/semaraugusto" target="_blank">
+                            
+                                <i class="fab fa-x-twitter"></i>
+                            
+                        </a>
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 my-3">
+                <div class="card my-3 h-100" title="Gabriel Faria">
+                    <div class="card-header">
+                        <img class="card-img-top" src="images/team/gabriel.jpeg" alt="Gabriel Faria">
+                    </div>
+                    <div class="card-body bg-transparent p-3">
+                        <h5 class="card-title">
+                            Gabriel Faria
+                        </h5>
+                        <div class="card-text secondary-font">
+                            Junior Researcher &amp; Developer
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="card-footer bg-transparent p-3">
+                        
+                        <a class="m-1 mx-2 stretched-link" href="https://www.linkedin.com/in/gabriel-faria-73812723a" target="_blank">
+                            
+                                <i class="fab fa-linkedin-in"></i>
+                            
+                        </a>
+                        
+                        <a class="m-1 mx-2 stretched-link" href="https://github.com/fariamg" target="_blank">
+                            
+                                <i class="fab fa-github"></i>
+                            
+                        </a>
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 my-3">
+                <div class="card my-3 h-100" title="Lucas Paulo">
+                    <div class="card-header">
+                        <img class="card-img-top" src="images/team/lucas-p.jpeg" alt="Lucas Paulo">
+                    </div>
+                    <div class="card-body bg-transparent p-3">
+                        <h5 class="card-title">
+                            Lucas Paulo
+                        </h5>
+                        <div class="card-text secondary-font">
+                            Junior Researcher
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="card-footer bg-transparent p-3">
+                        
+                        <a class="m-1 mx-2 stretched-link" href="https://www.linkedin.com/in/lucaspaulo-ufmg" target="_blank">
+                            
+                                <i class="fab fa-linkedin-in"></i>
+                            
+                        </a>
+                        
+                        <a class="m-1 mx-2 stretched-link" href="https://github.com/lucaspaulo1" target="_blank">
+                            
+                                <i class="fab fa-github"></i>
+                            
+                        </a>
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 my-3">
+                <div class="card my-3 h-100" title="Luiz Eduardo">
+                    <div class="card-header">
+                        <img class="card-img-top" src="images/team/luiz.jpeg" alt="Luiz Eduardo">
+                    </div>
+                    <div class="card-body bg-transparent p-3">
+                        <h5 class="card-title">
+                            Luiz Eduardo
+                        </h5>
+                        <div class="card-text secondary-font">
+                            Junior Researcher
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="card-footer bg-transparent p-3">
+                        
+                        <a class="m-1 mx-2 stretched-link" href="http://lattes.cnpq.br/7192079531651561" target="_blank">
+                            
+                                <svg class="svg-inline--fa" aria-hidden="true" focusable="false" role="img" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="currentColor" d="m97.871854 434.73261c-46.337391-94.94819-73.906252-152.28892-73.906252-153.71232 0-2.32214 2.831558-1.99974 30.672084 3.45957 48.965204 9.61389 75.126384 12.32631 118.735104 12.34258 57.69707.0159 104.6807-9.1222 141.18473-27.4842 19.31194-9.71476 30.92555-18.32755 40.43708-29.99337 11.716-14.37824 15.47977-24.28004 15.61512-40.94646.11867-15.85237-2.01801-24.21167-11.19035-43.60874-3.62892-7.66433-6.8168-16.46265-7.12098-19.54964-.47493-4.96814-.0684-5.68084 3.59445-6.10361 8.00292-.94846 47.50732 37.40224 62.05491 60.24069 25.07592 39.38574 27.11161 81.99337 5.88408 123.1953-13.03903 25.31314-27.44972 42.82712-51.57723 62.73362-40.09844 33.06211-86.70754 56.08608-151.06833 74.63514-34.5707 9.97024-90.47131 22.05883-101.98402 22.05883-2.44075 0-7.02006-8.00296-21.295953-37.28315l-.03402.0151zm12.904156-153.1207c-45.015874-5.83193-82.790737-10.90244-83.96064-11.27504-1.999745-.64427-9.154693-24.5158-13.190597-43.94683-1.016871-4.91744-2.509183-17.93873-3.322753-28.9583-3.6303611-49.17042 7.068779-83.16526 35.739145-113.734503 48.542406-51.712057 152.475965-58.003206 269.736485-16.327779 20.58274 7.324215 28.75504 12.410983 24.975 15.580668-2.79708 2.339846-21.75315 2.305883-54.50916-.102387-51.20464-3.763759-90.18335 3.357226-110.27491 20.176211-30.58742 25.60158-25.92345 81.72365 13.53071 162.68196 4.27316 8.76586 8.57881 17.34466 9.56318 19.09094 2.28966 4.01773.62803 7.74899-3.3572 7.56196-1.69755-.0813-39.91486-4.91203-84.92926-10.74592zm151.01614-44.04726c-35.92814-6.45997-68.22691-28.7388-78.65437-54.22127-5.00209-12.24165-4.76437-28.2131.57585-37.77483 4.83279-8.64723 17.3107-18.64993 28.48481-22.83843 18.59924-6.96791 51.17019-4.18853 74.90688 6.40975 22.53229 10.05487 42.50672 27.73816 49.93183 44.18457 9.52925 21.10841 1.59321 44.65955-18.82072 55.90059-13.5307 7.44285-39.82676 11.32572-56.44249 8.34109h.0181z"/>
+                                </svg>
+                            
+                        </a>
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 my-3">
+                <div class="card my-3 h-100" title="Heitor Maciel">
+                    <div class="card-header">
+                        <img class="card-img-top" src="images/team/heitor.jpeg" alt="Heitor Maciel">
+                    </div>
+                    <div class="card-body bg-transparent p-3">
+                        <h5 class="card-title">
+                            Heitor Maciel
+                        </h5>
+                        <div class="card-text secondary-font">
+                            Junior Researcher
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="card-footer bg-transparent p-3">
+                        
+                        <a class="m-1 mx-2 stretched-link" href="https://br.linkedin.com/in/heitor-maciel-35ba092a5" target="_blank">
+                            
+                                <i class="fab fa-linkedin-in"></i>
+                            
+                        </a>
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6 my-3">
+                <div class="card my-3 h-100" title="Christian Vieira">
+                    <div class="card-header">
+                        <img class="card-img-top" src="images/team/christian.jpeg" alt="Christian Vieira">
+                    </div>
+                    <div class="card-body bg-transparent p-3">
+                        <h5 class="card-title">
+                            Christian Vieira
+                        </h5>
+                        <div class="card-text secondary-font">
+                            Junior Researcher
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="card-footer bg-transparent p-3">
+                        
+                        <a class="m-1 mx-2 stretched-link" href="https://www.linkedin.com/in/chris-vieira-012248363/" target="_blank">
+                            
+                                <i class="fab fa-linkedin-in"></i>
+                            
+                        </a>
+                        
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</section>
+
+
+
+  </div><footer>
+    <div class="text-center pt-2">
+    
+    <span class="px-1">
+        <a href="mailto:mailto:zkbr@gmail.com" aria-label="mail" style="font-size: 2em;">
+            <i class="fa fa-envelope"></i>
+        </a>
+    </span>
+    
+
+    
+    <span class="px-1">
+        <a href="https://github.com/ZKBR" aria-label="github" style="font-size: 2em;">
+            <i class="fab fa-github"></i>
+        </a>
+    </span>
+    
+
+    
+
+    
+    <span class="px-1">
+        <a href="https://twitter.com" aria-label="x-twitter" style="font-size: 2em;">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+    </span>
+    
+
+    
+
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            
+                <div class="pb-2">
+                    <a href="https://zkbr.github.io/" title="ZKBR">
+                        <img alt="Footer logo" src="/zkbr.svg"
+                            height="40px">
+                    </a>
+                </div>
+            
+            &copy; 2025  All rights reserved
+            <div class="text-secondary">
+                Made with
+                <span class="text-danger">
+                    &#10084;
+                </span>
+                and
+                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+    <script src="/js/search.js"></script>
+
+
+
+
+
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>

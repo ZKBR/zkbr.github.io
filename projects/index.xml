@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on ZKBR</title>
+    <link>https://zkbr.github.io/projects/</link>
+    <description>Recent content in Projects on ZKBR</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 May 2025 12:19:32 -0300</lastBuildDate>
+    <atom:link href="https://zkbr.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Image Attestation</title>
+      <link>https://zkbr.github.io/projects/image-attestation/</link>
+      <pubDate>Wed, 07 May 2025 12:19:32 -0300</pubDate>
+      <guid>https://zkbr.github.io/projects/image-attestation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Benchmark</title>
+      <link>https://zkbr.github.io/projects/benchmark/</link>
+      <pubDate>Wed, 07 May 2025 12:19:14 -0300</pubDate>
+      <guid>https://zkbr.github.io/projects/benchmark/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CBDC</title>
+      <link>https://zkbr.github.io/projects/cbdc/</link>
+      <pubDate>Wed, 07 May 2025 12:19:07 -0300</pubDate>
+      <guid>https://zkbr.github.io/projects/cbdc/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
