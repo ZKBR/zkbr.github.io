@@ -1,5 +1,6 @@
 ---
 title: "Rich Content"
+description: ""
 date: 2021-04-03T19:53:33+05:30
 draft: true
 author: "Gurusabarish"
@@ -8,7 +9,6 @@ tags:
   - Sample
   - example
 image: /images/post.jpg
-description: ""
 toc: 
 ---
 

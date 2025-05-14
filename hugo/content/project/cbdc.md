@@ -1,11 +1,14 @@
-+++
-title = 'Privacy-Preserving Transactions in Central Bank Digital Currencies (CBDCs)'
-date = '2025-05-07T12:19:07-03:00'
-draft = false
-projects = ['CBDC']
-status = ['em andamento']
-tags = ['Blockchain', 'ZK']
-+++
+---
+title: "Privacy-Preserving Transactions in Central Bank Digital Currencies (CBDCs)"
+description: ""
+date: 2025-05-07T12:19:07-03:00
+draft: false
+status: in progress
+tags:
+  - Project/CBDC
+  - Blockchain
+  - ZK
+---
 
 Central banks worldwide are exploring the use of blockchain technology to issue and manage digital versions of fiat currencies, known as Central Bank Digital Currencies (CBDCs). However, this endeavor faces significant challenges. While most blockchain systems lack robust privacy protections, those that do offer privacy often do not support smart contracts, which are essential for enabling programmable money and advanced financial applications. Additionally, there is a need to balance privacy with regulatory requirements, such as allowing law enforcement to access transaction data under specific circumstances.
 

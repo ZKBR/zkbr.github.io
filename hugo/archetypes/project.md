@@ -1,8 +1,8 @@
 ---
+title: "{{ replace .Name "-" " " | title }}"
+description: ""
 date: {{ .Date }}
 draft: false
-title: "{{ replace .Name "-" " " | title }}"
-projects: []
-status: []
+status: ""
 tags: []
 ---

@@ -1,12 +1,11 @@
 ---
+title: "{{ replace .Name "-" " " | title }}"
+description: ""
 date: {{ .Date }}
 draft: true
-title: "{{ replace .Name "-" " " | title }}"
 author:
-projects: []
-status: []
+status: ""
 tags: []
 image:
-description:
 toc:
 ---

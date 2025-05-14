@@ -1,5 +1,6 @@
 ---
 title: "Markdown Syntax"
+description: ""
 date: 2021-04-03T23:29:21+05:30
 draft: true
 github_link: "https://github.com/gurusabarish/hugo-profile"
@@ -9,7 +10,6 @@ tags:
   - Sample
   - example
 image: /images/post.jpg
-description: ""
 toc:
 ---
 

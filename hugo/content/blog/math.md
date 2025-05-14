@@ -1,5 +1,6 @@
 ---
 title: "Render Math With Mathjax"
+description: ""
 date: 2022-12-09T19:53:33+05:30
 draft: true
 author: "Gurusabarish"
@@ -8,7 +9,6 @@ tags:
   - Mathjax
   - example
 image: /images/mathjax.png
-description: ""
 toc: true
 mathjax: true
 ---
