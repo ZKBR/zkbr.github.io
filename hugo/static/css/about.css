@@ -1,11 +1,3 @@
-header {
-    position: fixed !important;
-}
-
-.showHeaderOnTop {
-    position: fixed !important;
-}
-
 #single {
     padding: 60px 0;
     line-height: 1.7em;

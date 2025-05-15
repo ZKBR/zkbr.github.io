@@ -1,11 +1,3 @@
-header {
-    position: fixed !important;
-}
-
-.showHeaderOnTop {
-    position: fixed !important;
-}
-
 /* Animation */
 @keyframes fade-in {
     0% {
@@ -79,7 +71,7 @@ header .navbar.animate {
 /* hero */
 
 #hero {
-    min-height: 100vh;
+    min-height: -webkit-fill-available;
     line-height: 2rem;
     max-width: 100%;
 }
