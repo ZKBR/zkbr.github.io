@@ -1,16 +1,16 @@
 {{ if not .Site.Params.sections.disableBlog | default true }}
 {{ if gt (len (where .Site.RegularPages "Type" "blog")) 0 }}
-<section id="recentPosts" class="py-5">
+<section id="recent" class="py-5">
     <div class="container">
-        {{ $recentPostsCount := .Site.Params.recentPosts.count | default 3 }}
+        {{ $recentCount := .Site.Params.recent.count | default 3 }}
         <h3 class="text-center text-secondary py-3">
             Recent Posts
         </h3>
         <div class="row justify-content-center px-3 px-md-5">
-            {{ range where .Site.RegularPages "Section" "blog" | first $recentPostsCount }}
+            {{ range where .Site.RegularPages "Section" "blog" | first $recentCount }}
             <div class="col-lg-4 col-md-6 my-3">
                 <div class="card my-3 h-100" title="{{ .Title }}">
-                    {{ if and (not (.Site.Params.recentPosts.disableFeaturedImage | default false)) (.Params.image) }}
+                    {{ if and (not (.Site.Params.recent.disableFeaturedImage | default false)) (.Params.image) }}
                     <div class="card-header">
                         <img class="card-img-top" src="{{ .Params.image }}" alt="{{ .Title }}">
                     </div>
@@ -25,7 +25,7 @@
                         </div>
                         {{ end }}
                     </div>
-                    {{ if and .Params.tags (.Site.Params.recentPosts.showTags | default true) }}
+                    {{ if and .Params.tags (.Site.Params.recent.showTags | default true) }}
                     <div class="card-badges bg-transparent p-3">
                         {{ range .Params.tags }}
                         {{ if not (hasPrefix . "Project/") }}
@@ -34,7 +34,7 @@
                         {{ end }}
                     </div>
                     {{ end }}
-                    {{ if .Site.Params.recentPosts.showDate | default true }}
+                    {{ if .Site.Params.recent.showDate | default true }}
                     <div class="card-footer bg-transparent p-3">
                         <a class="m-1 mx-2 stretched-link" href="{{ .RelPermalink }}">{{ .Date.Format (.Site.Params.datesFormat.articleList | default "January 2, 2006") }}</a>
                     </div>

@@ -1,0 +1,49 @@
+<div class="text-center pt-2">
+    {{ if .Site.Params.footer.social.email }}
+    <span class="px-1">
+        <a href="mailto:{{ .Site.Params.footer.social.email }}" aria-label="mail" style="font-size: 2em;">
+            <i class="fa fa-envelope"></i>
+        </a>
+    </span>
+    {{ end }}
+
+    {{ if .Site.Params.footer.social.github }}
+    <span class="px-1">
+        <a href="{{ .Site.Params.footer.social.github }}" aria-label="github" style="font-size: 2em;">
+            <i class="fab fa-github"></i>
+        </a>
+    </span>
+    {{ end }}
+
+    {{ if .Site.Params.footer.social.linkedin }}
+    <span class="px-1">
+        <a href="{{ .Site.Params.footer.social.linkedin }}" aria-label="linkedin" style="font-size: 2em;">
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </span>
+    {{ end }}
+
+    {{ if .Site.Params.footer.social.twitter }}
+    <span class="px-1">
+        <a href="{{ .Site.Params.footer.social.twitter }}" aria-label="x-twitter" style="font-size: 2em;">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+    </span>
+    {{ end }}
+
+    {{ if .Site.Params.footer.social.instagram }}
+    <span class="px-1">
+        <a href="{{ .Site.Params.footer.social.instagram }}" aria-label="instagram" style="font-size: 2em;">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </span>
+    {{ end }}
+
+    {{ if .Site.Params.footer.social.facebook }}
+    <span class="px-1">
+        <a href="{{ .Site.Params.footer.social.facebook }}" aria-label="facebook" style="font-size: 2em;">
+            <i class="fab fa-facebook"></i>
+        </a>
+    </span>
+    {{ end }}
+</div>

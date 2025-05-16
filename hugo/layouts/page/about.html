@@ -8,16 +8,5 @@
 {{ end }}
 
 {{ define "main" }}
-<section id="single" class="py-5">
-    <div class="container">
-        <h3 class="text-center text-secondary py-3">
-            {{ .Title }} teste
-        </h3>
-        <div class="row text-center justify-content-center px-3 px-md-5">
-            <div class="col-lg-10 col-md-10 col-sm-12 my-3">
-                {{ .Site.Params.about.content | markdownify }}
-            </div>
-        </div>
-    </div>
-</section>
+{{- partial "sections/about.html" . -}}
 {{ end }}

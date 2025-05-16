@@ -127,7 +127,7 @@ params:
     disableAbout: false
     disableProjects: false
     disableTeam: false
-    disableBlog: false
+    disableBlog: true
 
   # Hero
   hero:
@@ -185,14 +185,14 @@ params:
     showLinks: true
 
   # Recent posts
-  recentPosts:
+  recent:
     disableFeaturedImage: false
     showStatus: true
     showTags: true
 
   # Footer
   footer:
-    socialNetworks:
+    social:
       email: mailto:zkbr.info@gmail.com
       github: https://github.com/ZKBR
       # linkedin: https://linkedin.com
