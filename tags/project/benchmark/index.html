@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="min-100 light">
 
 <head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -109,13 +109,16 @@
   
   
 
+  
+  <script defer src="/fontawesome-6/all-6.4.2.js"></script>
+
   <title>
 Project/Benchmark | ZKBR
 
   </title>
 </head>
 
-<body class="light">
+<body class="d-flex flex-column min-vh-100 light">
   
   
 <script>
@@ -143,13 +146,13 @@ Project/Benchmark | ZKBR
 <script>
     var prevScrollPos = window.pageYOffset;
     window.addEventListener("scroll", function showHeaderOnScroll() {
-        let profileHeaderElem = document.getElementById("profileHeader");
+        let headerElem = document.getElementById("header");
         let currentScrollPos = window.pageYOffset;
         let resetHeaderStyle = false;
         let showNavBarOnScrollUp =  false ;
         let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
         if (showNavBar) {
-            profileHeaderElem.classList.add("showHeaderOnTop");
+            headerElem.classList.add("showHeaderOnTop");
         } else {
             resetHeaderStyle = true;
         }
@@ -157,7 +160,7 @@ Project/Benchmark | ZKBR
             resetHeaderStyle = true;
         }
         if(resetHeaderStyle) {
-            profileHeaderElem.classList.remove("showHeaderOnTop");
+            headerElem.classList.remove("showHeaderOnTop");
         }
         prevScrollPos = currentScrollPos;
     });
@@ -165,7 +168,7 @@ Project/Benchmark | ZKBR
 
 
 
-<header id="profileHeader">
+<header id="header">
     <nav class="py-3 navbar navbar-expand-lg animate">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
             
@@ -309,7 +312,7 @@ Project/Benchmark | ZKBR
     </div>
 </section>
 
-  </div><footer>
+  </div><footer id="footer">
     <div class="text-center pt-2">
     
     <span class="px-1">
@@ -370,10 +373,13 @@ Project/Benchmark | ZKBR
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
+        document.documentElement.classList.add('dark');
     } else if (localStorage.getItem("pref-theme") === "light") {
         document.body.classList.remove('dark')
+        document.documentElement.classList.remove('dark')
     } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.body.classList.add('dark');
+        document.documentElement.classList.add('dark');
     }
 
 </script>
@@ -385,6 +391,11 @@ Project/Benchmark | ZKBR
         } else {
             document.body.classList.add('dark');
             localStorage.setItem("pref-theme", 'dark');
+        }
+        if (document.documentElement.className.includes("dark")) {
+            document.documentElement.classList.remove('dark');
+        } else {
+            document.documentElement.classList.add('dark');
         }
     })
 
