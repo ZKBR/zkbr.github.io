@@ -1,6 +1,14 @@
 {{ define "head" }}
 <meta name="description" content={{ .Site.Params.description }}>
 <link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/index.css" media="all">
+
+<script>
+    function updateHeaderHeight() {
+        document.documentElement.style.setProperty("--header-height", document.getElementById("header").getBoundingClientRect().bottom + "px");
+    }
+    document.addEventListener("DOMContentLoaded", updateHeaderHeight);
+    window.addEventListener("resize", updateHeaderHeight);
+</script>
 {{ end }}
 
 {{ define "title" }}

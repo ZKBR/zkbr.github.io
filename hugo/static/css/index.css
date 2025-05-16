@@ -2,6 +2,10 @@
     flex: 1;
 }
 
+#content .anchor-below-header {
+    scroll-margin-top: var(--header-height);
+}
+
 /* Animation */
 @keyframes appear {
     0% {
