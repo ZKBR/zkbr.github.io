@@ -132,8 +132,8 @@ params:
   # Hero
   hero:
     enable: true
-    # logo: zkbr.svg
-    logo:
+    logo: zkbr.svg
+    logoParts:
       - src: zkbr-bottom-back.svg
         type: right
         zIndex: 3

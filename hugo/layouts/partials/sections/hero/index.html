@@ -4,18 +4,19 @@
         <div class="row justify-content-center">
             <div class="d-flex flex-column col-sm-12 col-md-12 col-lg-8 content px-3 gap-3 {{ if .Site.Params.animate }}animate{{ end }}" id="primary-font">
                 {{ if .Site.Params.hero.logo }}
-                <div id="heroLogo" style="contain: layout;">
-                    {{ range .Site.Params.hero.logo }}
-                    <img src="{{ .src }}" class="img-fluid w-100{{ if .zIndex }} z-{{ .zIndex }}{{ end }}{{ if eq .zIndex 0 }} position-relative{{ else }} position-absolute{{ end }}{{ if .type }} fade-{{ .type }}{{ end }}" alt="" >
-                    {{ else }}
+                <div id="heroLogo" class="{{ if .Site.Params.hero.logoParts }}animated{{ end }}" style="contain: layout;">
                     <img src="{{ .Site.Params.hero.logo }}" class="img-fluid w-100" alt="">
+                </div>
+                {{ end }}
+                {{ if .Site.Params.hero.logoParts }}
+                <div id="heroLogoParts" class="{{ if .Site.Params.hero.logo }}animated{{ end }}" style="contain: layout;">
+                    {{ range .Site.Params.hero.logoParts }}
+                    <img src="{{ .src }}" class="img-fluid w-100 z-{{ .zIndex }}{{ if eq .zIndex 0 }} position-relative{{ else }} position-absolute{{ end }}{{ if .type }} fade-{{ .type }}{{ end }}" alt="" >
                     {{ end }}
-                    <!-- <img src="{{ .Site.Params.hero.logoBottom }}" class="img-fluid w-100 z-1 position-absolute {{ if .Site.Params.animate }}fade-bottom{{ end }}" alt="" >
-                    <img src="{{ .Site.Params.hero.logoTop }}" class="img-fluid w-100 z-0 position-relative {{ if .Site.Params.animate }}fade-up{{ end }}" alt=""> -->
                 </div>
                 {{ end }}
                 <div id="heroText" class="text-center{{ if .Site.Params.hero.logo }} delay{{ end }}">
-                    {{ if not .Site.Params.hero.logo }}
+                    {{ if not (or .Site.Params.hero.logo .Site.Params.hero.logoParts) }}
                     <h1>
                         {{ .Site.Params.hero.title }}
                     </h1>

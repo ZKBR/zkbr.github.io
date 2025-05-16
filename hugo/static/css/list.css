@@ -77,3 +77,22 @@
     position: relative;
     z-index: 2;
 }
+
+/* page items */
+
+#list-page .page-item.disabled .page-link {
+    background-color: transparent;
+    border: none;
+    color: transparent !important;
+}
+
+.page-item.active .page-link {
+    background-color: transparent;
+    border: 1px solid var(--text-link-color);
+    border-radius: 10px;
+}
+
+.page-item .page-link {
+    background-color: transparent;
+    border: none;
+}

@@ -3,6 +3,22 @@
 }
 
 /* Animation */
+@keyframes appear {
+    0% {
+        display: none;
+    }
+    100% {
+        display: inline;
+    }
+}
+@keyframes disappear {
+    0% {
+        display: inline;
+    }
+    100% {
+        display: none;
+    }
+}
 @keyframes fade-in {
     0% {
         opacity: 0;
@@ -13,7 +29,7 @@
 }
 @keyframes fade-bottom {
   0% {
-    transform: translateY(50px);
+    transform: translateY(20px);
     opacity: 0;
   }
   100% {
@@ -23,7 +39,7 @@
 }
 @keyframes fade-left {
   0% {
-    transform: translateX(-10px);
+    transform: translateX(-20px);
     opacity: 0;
   }
   100% {
@@ -46,7 +62,7 @@
 /* Header animation */
 @keyframes fade-up {
   0% {
-    transform: translateY(-10px);
+    transform: translateY(-20px);
     opacity: 0;
   }
   100% {
@@ -78,25 +94,6 @@ header .navbar.animate {
     min-height: -webkit-fill-available;
     line-height: 2rem;
     max-width: 100%;
-}
-#hero .content.animate {
-    animation: fade-in 1s ease-out;
-}
-#hero .content.animate .delay {
-    opacity: 0;
-    animation: fade-in 1s ease-out 1s forwards;
-}
-#hero .content.animate .fade-left {
-    animation: fade-left 1s ease-out;
-}
-#hero .content.animate .fade-right {
-    animation: fade-right 1s ease-out;
-}
-#hero .content.animate .fade-up {
-    animation: fade-up 1s ease-out;
-}
-#hero .content.animate .fade-bottom {
-    animation: fade-bottom 1s ease-out;
 }
 
 #hero .hero-bottom-svg {
@@ -210,6 +207,29 @@ header .navbar.animate {
 
 #hero .hero-content > a:hover::after, #hero .hero-content > a:focus::after, #hero .hero-content > a:active::after {
     width: 100%;
+}
+
+#heroLogoParts .fade-left {
+    animation: fade-left 1s ease-out;
+}
+#heroLogoParts .fade-right {
+    animation: fade-right 1s ease-out;
+}
+#heroLogoParts .fade-up {
+    animation: fade-up 1s ease-out;
+}
+#heroLogoParts .fade-bottom {
+    animation: fade-bottom 1s ease-out;
+}
+#heroLogoParts.animated {
+    animation: disappear 0s ease 1s forwards;
+}
+#heroLogo.animated {
+    animation: appear 0s ease 1s backwards;
+}
+#heroText {
+    opacity: 0;
+    animation: fade-in 1s ease-out 1s forwards;
 }
 
 /* about */
