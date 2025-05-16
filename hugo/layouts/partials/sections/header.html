@@ -45,12 +45,42 @@
 </script>
 {{ end }}
 
+<script>
+    document.addEventListener('DOMContentLoaded', function markHomePage() {
+        if (window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname.startsWith('/#')) {
+            document.body.classList.add("homepage");
+        }
+    });
+</script>
+
+<!-- Alternate header and hero logos on scroll up and down -->
+<script>
+    window.addEventListener("scroll", function alternateLogos() {
+        let headerElem = document.getElementById("header");
+        let headerLogoElem = document.getElementById("headerLogo");
+        let heroLogoElem = document.getElementById("heroLogo");
+        let searchBoxElem = document.getElementById("search-box");
+        let searchContentElem = document.getElementById("search-content");
+        let showHeaderLogo = headerElem.getBoundingClientRect().bottom > heroLogoElem.getBoundingClientRect().top;
+        if (showHeaderLogo && !document.getElementById("headerLogo").classList.contains("showLogo") && document.getElementById("heroLogo").classList.contains("showLogo")) {
+            headerLogoElem.classList.add("showLogo");
+            searchBoxElem.classList.add("showLogo");
+            heroLogoElem.classList.remove("showLogo");
+        } else if (!showHeaderLogo && document.getElementById("headerLogo").classList.contains("showLogo") && !document.getElementById("heroLogo").classList.contains("showLogo")) {
+            headerLogoElem.classList.remove("showLogo");
+            searchBoxElem.classList.remove("showLogo");
+            heroLogoElem.classList.add("showLogo");
+        }
+        searchContentElem.style.left = searchBoxElem.getBoundingClientRect().left + "px";
+    });
+</script>
+
 <!-- Navbar -->
 <header id="header">
     <nav class="py-3 navbar navbar-expand-lg {{ if .Site.Params.animate }}animate{{ end }}">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
             <!-- navbar brand -->
-            <a class="navbar-brand primary-font text-wrap" href="{{ .Site.BaseURL | relURL }}">
+            <a id="headerLogo" class="navbar-brand primary-font text-wrap" href="{{ .Site.BaseURL | relURL }}">
                 {{ if and (or (.Site.Params.favicon) (.Site.Params.navbar.brandLogo)) (.Site.Params.navbar.showBrandLogo | default true) }}
                 <img src="{{ .Site.Params.navbar.brandLogo | default .Site.Params.favicon }}" height="30"
                     class="d-inline-block align-top">
@@ -61,7 +91,7 @@
             </a>
 
             {{ if not (.Site.Params.navbar.disableSearch | default false) }}
-                <div>
+                <div id="search-box">
                     <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='{{ .Site.Params.navbar.searchPlaceholder | default "Ctrl + k to Search..."}}'
                         aria-label="Search" oninput="searchOnChange(event)">
                 </div>
@@ -117,7 +147,7 @@
 
                     {{ if not (.Site.Params.sections.disableBlog | default false) }}
                     <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{ if .IsHome }}{{ .Site.BaseURL | relURL }}#recentPosts{{ else }}/blog{{ end }}"
+                        <a class="nav-link" href="{{ if .IsHome }}{{ .Site.BaseURL | relURL }}#recent{{ else }}/blog{{ end }}"
                             aria-label="blog">
                             {{ .Site.Params.blog.title | default "Blog" }}
                         </a>

@@ -3,19 +3,23 @@
     <div class="container px-3 px-sm-5 px-md-5 px-lg-5 pt-lg-3">
         <div class="row justify-content-center">
             <div class="d-flex flex-column col-sm-12 col-md-12 col-lg-8 content px-3 gap-3 {{ if .Site.Params.animate }}animate{{ end }}" id="primary-font">
-                {{ if .Site.Params.hero.logo }}
-                <div id="heroLogo" class="{{ if .Site.Params.hero.logoParts }}animated{{ end }}" style="contain: layout;">
-                    <img src="{{ .Site.Params.hero.logo }}" class="img-fluid w-100" alt="">
-                </div>
-                {{ end }}
-                {{ if .Site.Params.hero.logoParts }}
-                <div id="heroLogoParts" class="{{ if .Site.Params.hero.logo }}animated{{ end }}" style="contain: layout;">
-                    {{ range .Site.Params.hero.logoParts }}
-                    <img src="{{ .src }}" class="img-fluid w-100 z-{{ .zIndex }}{{ if eq .zIndex 0 }} position-relative{{ else }} position-absolute{{ end }}{{ if .type }} fade-{{ .type }}{{ end }}" alt="" >
+                {{ if or .Site.Params.hero.logo .Site.Params.hero.logoParts }}
+                <div id="heroLogo" class="showLogo" style="contain: layout;">
+                    {{ if .Site.Params.hero.logo }}
+                    <div id="heroLogoDefault" class="{{ if .Site.Params.hero.logoParts }}animated{{ end }}" style="contain: layout;">
+                        <img src="{{ .Site.Params.hero.logo }}" class="img-fluid w-100" alt="">
+                    </div>
+                    {{ end }}
+                    {{ if .Site.Params.hero.logoParts }}
+                    <div id="heroLogoParts" class="{{ if .Site.Params.hero.logo }}animated{{ end }}" style="contain: layout;">
+                        {{ range .Site.Params.hero.logoParts }}
+                        <img src="{{ .src }}" class="img-fluid w-100 z-{{ .zIndex }}{{ if eq .zIndex 0 }} position-relative{{ else }} position-absolute{{ end }}{{ if .type }} fade-{{ .type }}{{ end }}" alt="" >
+                        {{ end }}
+                    </div>
                     {{ end }}
                 </div>
                 {{ end }}
-                <div id="heroText" class="text-center{{ if .Site.Params.hero.logo }} delay{{ end }}">
+                <div id="heroText" class="text-center{{ if or .Site.Params.hero.logo .Site.Params.hero.logoParts }} animated{{ end }}">
                     {{ if not (or .Site.Params.hero.logo .Site.Params.hero.logoParts) }}
                     <h1>
                         {{ .Site.Params.hero.title }}
