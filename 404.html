@@ -166,12 +166,42 @@ ZKBR | Page not found
 </script>
 
 
+<script>
+    document.addEventListener("DOMContentLoaded", function markHomePage() {
+        if (window.location.pathname === "/" || window.location.pathname === "/index.html" || window.location.pathname.startsWith("/#")) {
+            document.body.classList.add("homepage");
+        }
+    });
+</script>
+
+
+<script>
+    window.addEventListener("scroll", function alternateLogos() {
+        let headerElem = document.getElementById("header");
+        let headerLogoElem = document.getElementById("headerLogo");
+        let heroLogoElem = document.getElementById("heroLogo");
+        let searchBoxElem = document.getElementById("search-box");
+        let searchContentElem = document.getElementById("search-content");
+        let showHeaderLogo = headerElem.getBoundingClientRect().bottom > heroLogoElem.getBoundingClientRect().top;
+        if (showHeaderLogo && !document.getElementById("headerLogo").classList.contains("showLogo") && document.getElementById("heroLogo").classList.contains("showLogo")) {
+            headerLogoElem.classList.add("showLogo");
+            searchBoxElem.classList.add("showLogo");
+            heroLogoElem.classList.remove("showLogo");
+        } else if (!showHeaderLogo && document.getElementById("headerLogo").classList.contains("showLogo") && !document.getElementById("heroLogo").classList.contains("showLogo")) {
+            headerLogoElem.classList.remove("showLogo");
+            searchBoxElem.classList.remove("showLogo");
+            heroLogoElem.classList.add("showLogo");
+        }
+        searchContentElem.style.left = searchBoxElem.getBoundingClientRect().left + "px";
+    });
+</script>
+
 
 <header id="header">
     <nav class="py-3 navbar navbar-expand-lg animate">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
             
-            <a class="navbar-brand primary-font text-wrap" href="/">
+            <a id="headerLogo" class="navbar-brand primary-font text-wrap" href="/">
                 
                 <img src="/zkbr.svg" height="30"
                     class="d-inline-block align-top">
@@ -180,7 +210,7 @@ ZKBR | Page not found
             </a>
 
             
-                <div>
+                <div id="search-box">
                     <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Ctrl &#43; k to Search...'
                         aria-label="Search" oninput="searchOnChange(event)">
                 </div>
@@ -306,20 +336,13 @@ ZKBR | Page not found
 </div><div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-4 text-center">
-            
-                <div class="pb-2">
-                    <a href="https://zkbr.github.io/" title="ZKBR">
-                        <img alt="Footer logo" src="/zkbr.svg"
-                            height="40px">
-                    </a>
-                </div>
-            
             &copy; 2025  All rights reserved
             <div class="text-secondary">
                 Made with
-                <span class="text-danger">
-                    &#10084;
-                </span>
+                <a href="https://github.com/gohugoio/hugo" target="_blank"
+                    title="Designed and developed by GoHugo.io">
+                    Hugo
+                </a>
                 and
                 <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
                     title="Designed and developed by gurusabarish">

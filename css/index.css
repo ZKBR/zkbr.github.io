@@ -2,6 +2,10 @@
     flex: 1;
 }
 
+#content .anchor-below-header {
+    scroll-margin-top: var(--header-height);
+}
+
 /* Animation */
 @keyframes appear {
     0% {
@@ -71,8 +75,8 @@
   }
 }
 
-header .navbar.animate {
-    animation: fade-up 0.5s ease-in;
+.homepage header .navbar.animate {
+    animation: fade-in 0.5s ease-in;
 }
 
 /* ToolTip */
@@ -209,27 +213,49 @@ header .navbar.animate {
     width: 100%;
 }
 
-#heroLogoParts .fade-left {
-    animation: fade-left 1s ease-out;
-}
-#heroLogoParts .fade-right {
-    animation: fade-right 1s ease-out;
-}
-#heroLogoParts .fade-up {
-    animation: fade-up 1s ease-out;
-}
-#heroLogoParts .fade-bottom {
-    animation: fade-bottom 1s ease-out;
-}
-#heroLogoParts.animated {
-    animation: disappear 0s ease 1s forwards;
-}
-#heroLogo.animated {
-    animation: appear 0s ease 1s backwards;
-}
-#heroText {
+#heroLogo {
     opacity: 0;
-    animation: fade-in 1s ease-out 1s forwards;
+    transform: translateY(-20px);
+    transition: opacity .25s ease-out, transform .25s ease-out;
+}
+
+#heroLogo.showLogo {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity .25s ease-out, transform .25s ease-out;
+}
+
+#heroLogo #heroLogoDefault {
+    animation: fade-in .5s ease;
+}
+
+#heroLogo #heroLogoDefault.animated {
+    animation: appear 0s ease .5s backwards;
+}
+
+#heroLogo #heroLogoParts .fade-left {
+    animation: fade-left .5s ease-out;
+}
+
+#heroLogo #heroLogoParts .fade-right {
+    animation: fade-right .5s ease-out;
+}
+
+#heroLogo #heroLogoParts .fade-up {
+    animation: fade-up .5s ease-out;
+}
+
+#heroLogo #heroLogoParts .fade-bottom {
+    animation: fade-bottom .5s ease-out;
+}
+
+#heroLogo #heroLogoParts.animated {
+    animation: disappear 0s ease .5s forwards;
+}
+
+#heroText.animated {
+    opacity: 0;
+    animation: fade-in .5s ease-out .5s forwards;
 }
 
 /* about */
@@ -439,22 +465,22 @@ header .navbar.animate {
 
 /* recent posts */
 
-#recentPosts h3 {
+#recent h3 {
     color: var(--text-secondary-color) !important;
 }
 
-#recentPosts a {
+#recent a {
     text-decoration: none;
     color: var(--text-link-color) !important;
 }
 
-#recentPosts .badge {
+#recent .badge {
     background-color: var(--background-color) !important;
     color: var(--text-color) !important;
     margin: 0 1%;
 }
 
-#recentPosts .card {
+#recent .card {
     background-color: var(--secondary-color) !important;
     box-shadow: 0px 0px 24px rgba(65, 65, 65, 0.16);
     overflow: hidden;
@@ -462,13 +488,13 @@ header .navbar.animate {
     border: none !important;
 }
 
-#recentPosts .card:hover {
+#recent .card:hover {
     box-shadow: 0px 7px 24px rgba(65, 65, 65, 0.16);
     transition: transform 0.3s;
     transform: translateY(-7px);
 }
 
-#recentPosts .card .card-header {
+#recent .card .card-header {
     padding: 0px !important;
     -o-object-fit: cover;
     object-fit: cover;
@@ -478,31 +504,31 @@ header .navbar.animate {
     border: none !important;
 }
 
-#recentPosts .card .card-body .card-title.no-summary{
+#recent .card .card-body .card-title.no-summary{
     margin-bottom: 0 !important;
 }
 
-#recentPosts .card .card-footer {
+#recent .card .card-footer {
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
 }
 
-#recentPosts .card:hover .card-img-top {
+#recent .card:hover .card-img-top {
     transform: scale(1.1);
     transition: all 0.3s ease-out;
 }
 
-#recentPosts .card-img-top {
+#recent .card-img-top {
     transition: transform 0.3s;
 }
 
-#recentPosts .float-end .btn {
+#recent .float-end .btn {
     transition: none;
     border-radius: .5rem !important;
     border-color: var(--primary-color) !important;
 }
 
-#recentPosts .float-end .btn:focus {
+#recent .float-end .btn:focus {
     box-shadow: none !important;
 }
 

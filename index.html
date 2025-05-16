@@ -106,6 +106,14 @@
 <meta name="description" content=Zero-Knowledge&#32;and&#32;Blockchain&#32;Research&#32;Group>
 <link rel="stylesheet" href="/css/index.css" media="all">
 
+<script>
+    function updateHeaderHeight() {
+        document.documentElement.style.setProperty("--header-height", document.getElementById("header").getBoundingClientRect().bottom + "px");
+    }
+    document.addEventListener("DOMContentLoaded", updateHeaderHeight);
+    window.addEventListener("resize", updateHeaderHeight);
+</script>
+
 
   
   
@@ -168,12 +176,42 @@ ZKBR
 </script>
 
 
+<script>
+    document.addEventListener("DOMContentLoaded", function markHomePage() {
+        if (window.location.pathname === "/" || window.location.pathname === "/index.html" || window.location.pathname.startsWith("/#")) {
+            document.body.classList.add("homepage");
+        }
+    });
+</script>
+
+
+<script>
+    window.addEventListener("scroll", function alternateLogos() {
+        let headerElem = document.getElementById("header");
+        let headerLogoElem = document.getElementById("headerLogo");
+        let heroLogoElem = document.getElementById("heroLogo");
+        let searchBoxElem = document.getElementById("search-box");
+        let searchContentElem = document.getElementById("search-content");
+        let showHeaderLogo = headerElem.getBoundingClientRect().bottom > heroLogoElem.getBoundingClientRect().top;
+        if (showHeaderLogo && !document.getElementById("headerLogo").classList.contains("showLogo") && document.getElementById("heroLogo").classList.contains("showLogo")) {
+            headerLogoElem.classList.add("showLogo");
+            searchBoxElem.classList.add("showLogo");
+            heroLogoElem.classList.remove("showLogo");
+        } else if (!showHeaderLogo && document.getElementById("headerLogo").classList.contains("showLogo") && !document.getElementById("heroLogo").classList.contains("showLogo")) {
+            headerLogoElem.classList.remove("showLogo");
+            searchBoxElem.classList.remove("showLogo");
+            heroLogoElem.classList.add("showLogo");
+        }
+        searchContentElem.style.left = searchBoxElem.getBoundingClientRect().left + "px";
+    });
+</script>
+
 
 <header id="header">
     <nav class="py-3 navbar navbar-expand-lg animate">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
             
-            <a class="navbar-brand primary-font text-wrap" href="/">
+            <a id="headerLogo" class="navbar-brand primary-font text-wrap" href="/">
                 
                 <img src="/zkbr.svg" height="30"
                     class="d-inline-block align-top">
@@ -182,7 +220,7 @@ ZKBR
             </a>
 
             
-                <div>
+                <div id="search-box">
                     <input id="search" autocomplete="off" class="form-control mr-sm-2 d-none d-md-block" placeholder='Ctrl &#43; k to Search...'
                         aria-label="Search" oninput="searchOnChange(event)">
                 </div>
@@ -274,24 +312,28 @@ ZKBR
         <div class="row justify-content-center">
             <div class="d-flex flex-column col-sm-12 col-md-12 col-lg-8 content px-3 gap-3 animate" id="primary-font">
                 
-                <div id="heroLogo" class="animated" style="contain: layout;">
-                    <img src="zkbr.svg" class="img-fluid w-100" alt="">
+                <div id="heroLogo" class="showLogo" style="contain: layout;">
+                    
+                    <div id="heroLogoDefault" class="animated" style="contain: layout;">
+                        <img src="zkbr.svg" class="img-fluid w-100" alt="">
+                    </div>
+                    
+                    
+                    <div id="heroLogoParts" class="animated" style="contain: layout;">
+                        
+                        <img src="zkbr-bottom-back.svg" class="img-fluid w-100 z-3 position-absolute fade-right" alt="" >
+                        
+                        <img src="zkbr-top-back.svg" class="img-fluid w-100 z-2 position-absolute fade-left" alt="" >
+                        
+                        <img src="zkbr-bottom-front.svg" class="img-fluid w-100 z-1 position-absolute fade-right" alt="" >
+                        
+                        <img src="zkbr-top-front.svg" class="img-fluid w-100 z-0 position-relative fade-left" alt="" >
+                        
+                    </div>
+                    
                 </div>
                 
-                
-                <div id="heroLogoParts" class="animated" style="contain: layout;">
-                    
-                    <img src="zkbr-bottom-back.svg" class="img-fluid w-100 z-3 position-absolute fade-right" alt="" >
-                    
-                    <img src="zkbr-top-back.svg" class="img-fluid w-100 z-2 position-absolute fade-left" alt="" >
-                    
-                    <img src="zkbr-bottom-front.svg" class="img-fluid w-100 z-1 position-absolute fade-right" alt="" >
-                    
-                    <img src="zkbr-top-front.svg" class="img-fluid w-100 z-0 position-relative fade-left" alt="" >
-                    
-                </div>
-                
-                <div id="heroText" class="text-center delay">
+                <div id="heroText" class="text-center animated">
                     
                     <h2>
                         Zero-Knowledge and Blockchain Research Group
@@ -316,7 +358,7 @@ ZKBR
     </div>
 </section>
 
-<section id="about" class="py-5">
+<section id="about" class="py-5 anchor-below-header">
     <div class="container">
         <h3 class="text-center text-secondary py-3">
             About Us
@@ -330,7 +372,7 @@ ZKBR
 </section>
 
 
-<section id="projects" class="py-5">
+<section id="projects" class="py-5 anchor-below-header">
     <div class="container">
         <h3 class="text-center text-secondary py-3">
             Projects
@@ -397,7 +439,7 @@ ZKBR
 
 
 
-<section id="team" class="py-5">
+<section id="team" class="py-5 anchor-below-header">
     <div class="container">
         <h3 class="text-center text-secondary py-3">
             Team
@@ -753,20 +795,13 @@ ZKBR
 </div><div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-4 text-center">
-            
-                <div class="pb-2">
-                    <a href="https://zkbr.github.io/" title="ZKBR">
-                        <img alt="Footer logo" src="/zkbr.svg"
-                            height="40px">
-                    </a>
-                </div>
-            
             &copy; 2025  All rights reserved
             <div class="text-secondary">
                 Made with
-                <span class="text-danger">
-                    &#10084;
-                </span>
+                <a href="https://github.com/gohugoio/hugo" target="_blank"
+                    title="Designed and developed by GoHugo.io">
+                    Hugo
+                </a>
                 and
                 <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
                     title="Designed and developed by gurusabarish">
