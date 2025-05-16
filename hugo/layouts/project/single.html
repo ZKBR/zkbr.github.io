@@ -68,7 +68,7 @@
   let stickySideBarElem = document.getElementById("stickySideBar");
   let stickyNavBar = {{ .Site.Params.navbar.stickyNavBar.enable | default false }};
   if(stickyNavBar) {
-    let headerElem = document.getElementById("profileHeader");
+    let headerElem = document.getElementById("header");
     let headerHeight = headerElem.offsetHeight + 15;
     stickySideBarElem.style.top = headerHeight + "px";
   } else {

@@ -24,13 +24,13 @@
 <script>
     var prevScrollPos = window.pageYOffset;
     window.addEventListener("scroll", function showHeaderOnScroll() {
-        let profileHeaderElem = document.getElementById("profileHeader");
+        let headerElem = document.getElementById("header");
         let currentScrollPos = window.pageYOffset;
         let resetHeaderStyle = false;
         let showNavBarOnScrollUp = {{ $showNavBarOnScrollUp }};
         let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
         if (showNavBar) {
-            profileHeaderElem.classList.add("showHeaderOnTop");
+            headerElem.classList.add("showHeaderOnTop");
         } else {
             resetHeaderStyle = true;
         }
@@ -38,7 +38,7 @@
             resetHeaderStyle = true;
         }
         if(resetHeaderStyle) {
-            profileHeaderElem.classList.remove("showHeaderOnTop");
+            headerElem.classList.remove("showHeaderOnTop");
         }
         prevScrollPos = currentScrollPos;
     });
@@ -46,7 +46,7 @@
 {{ end }}
 
 <!-- Navbar -->
-<header id="profileHeader">
+<header id="header">
     <nav class="py-3 navbar navbar-expand-lg {{ if .Site.Params.animate }}animate{{ end }}">
         <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
             <!-- navbar brand -->
