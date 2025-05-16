@@ -127,7 +127,7 @@ params:
     disableAbout: false
     disableProjects: false
     disableTeam: false
-    disableBlog: true
+    disableBlog: false
 
   # Hero
   hero:
