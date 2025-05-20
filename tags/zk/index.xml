@@ -15,12 +15,5 @@
       <guid>https://zkbr.github.io/project/images/</guid>
       <description>&lt;p&gt;In the age of generative artificial intelligence, ensuring the provenance and authenticity of digital images has emerged as a critical challenge. The Coalition for Content Provenance and Authenticity (C2PA) introduced a signature scheme to address this issue, but it relies on trust when images are edited prior to publication—a near-ubiquitous scenario. Dan Boneh et al. proposed an alternative approach, replacing C2PA signatures with zero-knowledge proofs to verify that edits were applied to a legitimately signed image. While this represents a significant advancement, their method currently processes only one operation at a time, and proof generation remains computationally impractical for real-world use. This work focuses on optimizing the proving time of such verification methods while enabling the seamless composition of multiple editing operations within a single image.&lt;/p&gt;</description>
     </item>
-    <item>
-      <title></title>
-      <link>https://zkbr.github.io/project/cbdc/</link>
-      <pubDate>Wed, 07 May 2025 12:19:07 -0300</pubDate>
-      <guid>https://zkbr.github.io/project/cbdc/</guid>
-      <description>&lt;p&gt;Central banks worldwide are exploring the use of blockchain technology to issue and manage digital versions of fiat currencies, known as Central Bank Digital Currencies (CBDCs). However, this endeavor faces significant challenges. While most blockchain systems lack robust privacy protections, those that do offer privacy often do not support smart contracts, which are essential for enabling programmable money and advanced financial applications. Additionally, there is a need to balance privacy with regulatory requirements, such as allowing law enforcement to access transaction data under specific circumstances.&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>
