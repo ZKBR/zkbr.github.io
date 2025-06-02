@@ -1,4 +1,4 @@
-{{ if not .Site.Params.sections.disableBlog | default true }}
+{{ if not .Site.Params.sections.disableBlog | default false }}
 {{ if gt (len (where .Site.RegularPages "Type" "blog")) 0 }}
 <section id="recent" class="py-5 anchor-below-header">
     <div class="container">

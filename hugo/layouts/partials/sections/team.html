@@ -6,7 +6,7 @@
             Team
         </h3>
         <div class="row justify-content-center px-3 px-md-5">
-            {{ range sort (where .Site.RegularPages "Section" "team") "Params.index" "asc" }}
+            {{ range sort (where .Site.RegularPages "Type" "team") "Params.index" "asc" }}
             <div class="col-lg-3 col-md-6 my-3">
                 <div class="card my-3 h-100" title="{{ .Params.name }}">
                     {{ if and (not (.Site.Params.team.disableFeaturedImage | default false)) (.Params.image) }}

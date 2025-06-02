@@ -140,12 +140,16 @@
                     </li>
                     {{ end }}
 
-                    {{ if and (.Site.Params.navbar.enableSeparator | default false) (or .Site.Menus.main (not (.Site.Params.sections.disableBlog | default false))) }}
+                    {{ $disableBlog := or (eq (len (where .Site.RegularPages "Type" "blog")) 0) (.Site.Params.sections.disableBlog | default false) }}
+
+                    {{ $disableMenu := not .Site.Menus.main }}
+
+                    {{ if and (.Site.Params.navbar.enableSeparator | default false) (or (not $disableBlog) (not $disableMenu)) }}
                         <li class="nav-item navbar-text d-none d-lg-block d-xl-block"><div class="nav-link nav-link-sep"></div></li>
                         <div class="dropdown-divider"></div>
                     {{ end }}
 
-                    {{ if not (.Site.Params.sections.disableBlog | default false) }}
+                    {{ if not $disableBlog }}
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="{{ if .IsHome }}{{ .Site.BaseURL | relURL }}#recent{{ else }}/blog{{ end }}"
                             aria-label="blog">
@@ -174,12 +178,12 @@
                     </li>
                     {{else}}
                     <!-- Single menu item -->
-                    <!-- <li class="nav-item navbar-text">
+                    <li class="nav-item navbar-text">
                         <a class="nav-link" href="{{.URL}}" title="{{ .Title }}">
                             {{ .Pre }}
                             {{ .Name }}
                         </a>
-                    </li> -->
+                    </li>
                     {{end}}
                     {{end}}
 
