@@ -1,13 +1,14 @@
 ---
 name: "Gabriel Faria"
 role: "Junior Researcher & Developer"
+draft: false
 index: 2
 image: /images/team/gabriel.jpeg
 badges: []
 links:
   github: https://github.com/fariamg
-  lattes: ""
+  lattes:
   linkedin: https://www.linkedin.com/in/gabriel-faria-73812723a
-  x: ""
-featured: ""
+  x:
+featured:
 ---
