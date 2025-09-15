@@ -55,7 +55,7 @@ params:
   title: "ZKBR"
   description: Zero-Knowledge and Blockchain Research Group
   # staticPath: ""  # The path to serve the static files from
-  favicon: "/fav.png"
+  favicon: "/square.png"
 
   # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
   # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
@@ -156,7 +156,7 @@ params:
     #     - icon: fab fa-x-twitter
     #       url: https://example.com
     #   customIcons:
-    #     - icon: /fav.png
+    #     - icon: /square.png
     #       url: "https://example.com"
 
   # About

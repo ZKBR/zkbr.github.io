@@ -1,0 +1,28 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2121_47)">
+<path d="M125 125V175" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55 125V175" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M125 150L175 100" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55 150L105 100" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M175 175L125 125" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55 175L105 125" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M105 125H55" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M175 100H125" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M125 150V100" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55 100V150" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55 100H105" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M75 30V80" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M75 55L125 5" stroke="#009900" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M125 80L75 30" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5 80H55" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55 30L5 80" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M75 5V55" stroke="#009900" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M5 55L55 5" stroke="#009900" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M55 5H5" stroke="#009900" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_2121_47">
+<rect width="180" height="180" fill="white"/>
+</clipPath>
+</defs>
+</svg>

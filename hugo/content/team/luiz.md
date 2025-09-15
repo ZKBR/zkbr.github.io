@@ -7,7 +7,7 @@ image: /images/team/luiz.jpeg
 badges: []
 links:
   github:
-  lattes: http://lattes.cnpq.br/7192079531651561
+  lattes: https://lattes.cnpq.br/7192079531651561
   linkedin:
   x:
 featured:
