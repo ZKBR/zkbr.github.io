@@ -1,0 +1,21 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M138 163V213" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M68 163V213" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M138 188L188 138" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M68 188L118 138" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M188 213L138 163" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M68 213L118 163" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M118 163H68" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M188 138H138" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M138 188V138" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M68 138V188" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M68 138H118" stroke="#DDBB00" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M138 68V118" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M138 93L188 43" stroke="#009900" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M188 118L138 68" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M68 118H118" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M118 68L68 118" stroke="#0000DD" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M138 43V93" stroke="#009900" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M68 93L118 43" stroke="#009900" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M118 43H68" stroke="#009900" stroke-opacity="0.75" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
