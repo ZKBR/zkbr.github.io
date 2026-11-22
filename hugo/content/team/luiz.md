@@ -1,6 +1,6 @@
 ---
 name: "Luiz Eduardo"
-role: "Junior Researcher"
+role: "Researcher"
 draft: false
 index: 2
 image: /images/team/luiz.jpeg

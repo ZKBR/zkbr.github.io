@@ -1,8 +1,8 @@
 ---
 name: "Gabriel Faria"
-role: "Junior Researcher & Developer"
+role: "Undergraduate Researcher & Developer"
 draft: false
-index: 2
+index: 3
 image: /images/team/gabriel.jpeg
 badges: []
 links:

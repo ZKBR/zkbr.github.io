@@ -1,8 +1,8 @@
 ---
 name: "Arthur"
-role: "Junior Researcher"
+role: "Researcher"
 draft: false
-index: 9
+index: 1
 image: /avatar.png
 badges: []
 links:

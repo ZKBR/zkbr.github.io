@@ -1,8 +1,8 @@
 ---
 name: "Lionel"
-role: "Junior Researcher"
+role: "Undergraduate Researcher"
 draft: false
-index: 9
+index: 4
 image: /avatar.png
 badges: []
 links:

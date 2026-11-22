@@ -1,8 +1,8 @@
 ---
 name: "Lucas Paulo"
-role: "Junior Researcher"
+role: "Undergraduate Researcher"
 draft: false
-index: 2
+index: 5
 image: /images/team/lucas-p.jpeg
 badges: []
 links:
