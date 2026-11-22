@@ -12,3 +12,5 @@ links:
   x:
 featured:
 ---
+
+Luiz studies commitments that hide the committed value unconditionally, even against unlimited computing power, while binding rests on hard problems from coding theory, which are believed to resist quantum computers. His starting point is HQC, the code-based scheme recently selected for standardization by NIST.
