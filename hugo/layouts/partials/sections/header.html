@@ -61,6 +61,7 @@
         let heroLogoElem = document.getElementById("heroLogo");
         let searchBoxElem = document.getElementById("search-box");
         let searchContentElem = document.getElementById("search-content");
+        if (!heroLogoElem) return; // pages without the hero (everything but the home page)
         let showHeaderLogo = headerElem.getBoundingClientRect().bottom > heroLogoElem.getBoundingClientRect().top;
         if (showHeaderLogo && !document.getElementById("headerLogo").classList.contains("showLogo") && document.getElementById("heroLogo").classList.contains("showLogo")) {
             headerLogoElem.classList.add("showLogo");
@@ -134,6 +135,10 @@
 
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="{{ if .IsHome }}{{ .Site.BaseURL | relURL }}#papers{{ else }}/papers{{ end }}" aria-label="papers">Papers</a>
+                    </li>
+
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/explain/" aria-label="what is zero knowledge">What is ZK?</a>
                     </li>
 
                     {{ if not (.Site.Params.sections.disableTeam | default false) }}
