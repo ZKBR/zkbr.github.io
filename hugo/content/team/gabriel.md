@@ -13,4 +13,4 @@ links:
 featured:
 ---
 
-Gabriel studies zero-knowledge proofs applied to AI (zkML), for example proving that a model produced a given output without revealing the model. He is also interested in using Lean, a proof assistant, to formally verify cryptographic constructions.
+Gabriel works on cryptography, blockchain, and distributed systems, implementing protocols in Rust and exploring zero-knowledge proofs for verifiable machine learning. He also uses Lean to formalize cryptographic constructions, connecting mathematical foundations with practical implementation.
