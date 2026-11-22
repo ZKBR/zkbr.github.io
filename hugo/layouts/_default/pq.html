@@ -1,7 +1,7 @@
 {{ define "head" }}
 <meta name="description" content="{{ .Description }}">
-<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/explain.css" media="all">
-<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/pq.css" media="all">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/explain.css?v={{ now.Unix }}" media="all">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/pq.css?v={{ now.Unix }}" media="all">
 {{ end }}
 
 {{ define "title" }}
@@ -107,5 +107,5 @@
   <p>The ZKBR group follows this field because zero-knowledge proof systems are affected too: many rest on elliptic curves. See the <a href="/talks/">slides of the talk</a> for more, including what the migration means for Bitcoin and Ethereum.</p>
 </section>
 </div>
-<script src="{{ .Site.Params.staticPath }}/js/pq.js" defer></script>
+<script src="{{ .Site.Params.staticPath }}/js/pq.js?v={{ now.Unix }}" defer></script>
 {{ end }}

@@ -1,6 +1,6 @@
 {{ define "head" }}
 <meta name="description" content="{{ .Description }}">
-<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/explain.css" media="all">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/explain.css?v={{ now.Unix }}" media="all">
 {{ end }}
 
 {{ define "title" }}
@@ -128,5 +128,5 @@
   <p>The ZKBR group studies how these systems work, how fast they are and whether they really hide what they claim. See the <a href="/papers/">papers we follow</a> and <a href="/#team">the team</a>.</p>
 </section>
 </div>
-<script src="{{ .Site.Params.staticPath }}/js/explain.js" defer></script>
+<script src="{{ .Site.Params.staticPath }}/js/explain.js?v={{ now.Unix }}" defer></script>
 {{ end }}
