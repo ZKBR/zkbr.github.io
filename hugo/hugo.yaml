@@ -119,7 +119,7 @@ params:
   
   sections:
     disableAbout: false
-    disableProjects: false
+    disableProjects: true
     disableTeam: false
     disableBlog: true
 
