@@ -40,6 +40,14 @@
   <p>Most of the new standards rest on <strong>lattices</strong>, and the central problem is <strong>learning with errors</strong> (LWE). It is plain linear algebra modulo a number q, with one twist: every equation is off by a small error. Below, the matrix A and the vector b are public; the secret x and the small error e (entries −1, 0 or 1) are not. Your goal is to find x. Start small, then make it bigger.</p>
 
   <div class="zk-panel pq-eq-panel">
+    <label class="pq-qsel">Modulus q:
+      <select id="lwe-q">
+        <option value="97">97 (toy example)</option>
+        <option value="3329">3,329 (ML-KEM, Kyber)</option>
+        <option value="12289">12,289 (FN-DSA, Falcon)</option>
+        <option value="8380417">8,380,417 (ML-DSA, Dilithium)</option>
+      </select>
+    </label>
     <label class="pq-slider">Size: <b id="lwe-size">2 unknowns, 4 equations</b>
       <input type="range" id="lwe-n" min="0" max="12" value="0" step="1" aria-label="Number of unknowns">
     </label>
@@ -71,8 +79,9 @@
   <details class="zk-details">
     <summary>Why this is the right kind of hard</summary>
     <p><strong>Without the error</strong>, the equations Ax = b are solved in an instant by Gaussian elimination, whatever their size. <strong>With the error</strong>, elimination combines the equations and the small errors add up into large ones, so the answer it gives is wrong. That is what you saw in attack 1.</p>
+    <p><strong>A larger modulus alone does not help:</strong> elimination fails just the same for every q, and with two unknowns even q = 3,329 can be searched in seconds. The security comes from the number of unknowns.</p>
     <p><strong>Searching</strong> works for two unknowns, but the number of candidates grows exponentially with n. The best known attacks are cleverer than searching: they use lattice reduction. Still, they take exponential time too, on classical and on quantum computers. No quantum algorithm like Shor’s is known for LWE.</p>
-    <p><strong>Real parameters.</strong> ML-KEM-512, the smallest version of the new NIST key-exchange standard, works with 512 unknowns modulo q = 3,329, with a structured matrix to keep keys small. Its security is estimated to be comparable to AES-128.</p>
+    <p><strong>Real parameters.</strong> ML-KEM-512, the smallest version of the new NIST key-exchange standard, works with 512 unknowns modulo q = 3,329, with a structured matrix to keep keys small and errors between −3 and 3. Its security is estimated to be comparable to AES-128.</p>
     <p><strong>From problem to encryption.</strong> The public key is the pair (A, b). To encrypt a bit, the sender adds up a random selection of the equations and hides the bit in the result. Only someone who knows x can remove the noise and read the bit (Regev, 2005).</p>
   </details>
 </section>
