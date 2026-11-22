@@ -12,3 +12,5 @@ links:
   x:
 featured:
 ---
+
+Lucas studies privacy in zkVMs: which systems really hide the user's data, rather than only producing short proofs. This semester his work was theoretical, from the definition of zero-knowledge to how today's zkVMs obtain it. Next semester he will measure how practical it is, including on a phone.
