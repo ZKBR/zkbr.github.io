@@ -10,6 +10,7 @@ talks:
     summary: "Quantum computing without the hype: logical versus physical qubits, Shor's and Grover's algorithms, and why a cryptographically relevant quantum computer is still far off. Quantum key distribution and its limits. The new NIST post-quantum algorithms, with a toy example of learning with errors, and what the migration means for TLS, certificates, messaging, mobile networks, the Internet of Things, Bitcoin and Ethereum."
     slides: "/talks/post-quantum-dcc-week-2026.pdf"
     size: "82 slides, 6.4 MB"
+    interactive: "/pq/"
   - title: "Zero Knowledge, or How to Outsource a Computation Verifiably"
     speaker: "Jeroen van de Graaf"
     event: "Blockchain UFMG"

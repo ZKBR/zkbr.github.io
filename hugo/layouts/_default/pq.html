@@ -1,0 +1,106 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Description }}">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/explain.css" media="all">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/pq.css" media="all">
+{{ end }}
+
+{{ define "title" }}
+{{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<div class="zk">
+<section class="zk-hero container">
+  <h1>What is post-quantum cryptography?</h1>
+  <p class="zk-lead">A large quantum computer would break the public-key cryptography that protects almost all internet traffic today. Post-quantum cryptography replaces it with problems that quantum computers are not known to solve. This page shows what would break, and lets you try one of the new problems yourself.</p>
+  <p class="zk-small">Based on the talk <a href="/talks/"><em>Post-quantum cryptography, or how a working quantum computer will destroy four decades of cryptographic research</em></a> by Jeroen van de Graaf (DCC Week, UFMG, 2026).</p>
+</section>
+
+<!-- 1. What breaks -->
+<section class="zk-sec container" id="breaks">
+  <h2><span class="zk-num">1</span> What a quantum computer would break</h2>
+  <div class="pq-two">
+    <div class="zk-card pq-bad">
+      <h3>Shor’s algorithm (1994): broken</h3>
+      <p>Factoring and discrete logarithms become easy. That breaks <strong>RSA</strong>, <strong>Diffie–Hellman</strong> and <strong>elliptic-curve</strong> cryptography: the key exchange behind HTTPS, the signatures on certificates, and the keys of Bitcoin and Ethereum wallets.</p>
+      <p class="pq-fix"><strong>Fix:</strong> replace them with different problems.</p>
+    </div>
+    <div class="zk-card pq-ok">
+      <h3>Grover’s algorithm (1996): weakened</h3>
+      <p>Exhaustive search over 2<sup>N</sup> keys takes about 2<sup>N/2</sup> steps. That weakens <strong>AES</strong> and hash functions such as <strong>SHA-256</strong>, but does not break them.</p>
+      <p class="pq-fix"><strong>Fix:</strong> double the key size, for example AES-256 instead of AES-128.</p>
+    </div>
+  </div>
+  <p>No quantum computer today comes close: the largest number factored with Shor’s algorithm proper is 21, and breaking RSA would need thousands of error-corrected <em>logical</em> qubits, each made of many noisy physical ones. Still, the migration has started. NIST plans to retire RSA and elliptic curves by 2035, and anything encrypted today can be recorded now and decrypted once such a computer exists: <strong>harvest now, decrypt later</strong>.</p>
+</section>
+
+<!-- 2. LWE -->
+<section class="zk-sec container" id="lwe">
+  <h2><span class="zk-num">2</span> Try it: learning with errors</h2>
+  <p>Most of the new standards rest on <strong>lattices</strong>, and the central problem is <strong>learning with errors</strong> (LWE). It is plain linear algebra modulo a number q, with one twist: every equation is off by a small error. Below are four equations in two unknowns, modulo q = 97. Your goal is to find the secret x.</p>
+
+  <div class="zk-panel pq-eq-panel">
+    <div class="pq-eq" id="lwe-eq" aria-live="polite"></div>
+    <div class="zk-controls zk-controls-wrap">
+      <label class="zk-check"><input type="checkbox" id="lwe-err"> Add the small error e</label>
+      <label class="zk-check"><input type="checkbox" id="lwe-show"> Show the secret x</label>
+      <button class="zk-btn" id="lwe-new">New random instance</button>
+      <button class="zk-btn" id="lwe-slides">Example from the talk</button>
+    </div>
+  </div>
+
+  <div class="pq-attacks">
+    <div class="zk-panel">
+      <h3>Attack 1: Gaussian elimination</h3>
+      <p class="zk-small">Solve the first two equations exactly, then check the result against the other two.</p>
+      <button class="zk-btn zk-btn-primary" id="lwe-elim">Solve</button>
+      <div class="pq-out" id="lwe-elim-out" aria-live="polite"></div>
+    </div>
+    <div class="zk-panel">
+      <h3>Attack 2: try every x</h3>
+      <p class="zk-small">Test all 97 × 97 = 9,409 candidates: x is a solution if every equation is off by at most 1.</p>
+      <button class="zk-btn zk-btn-primary" id="lwe-brute">Search</button>
+      <div class="pq-bar"><i id="lwe-bar"></i></div>
+      <div class="pq-out" id="lwe-brute-out" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <div class="zk-panel pq-scale">
+    <h3>Now make it bigger</h3>
+    <p class="zk-small">Elimination fails as soon as there is an error, so an attacker is left with searching. With n unknowns there are q<sup>n</sup> candidates.</p>
+    <label class="pq-slider">Number of unknowns n: <b id="sc-n">2</b>
+      <input type="range" id="sc" min="0" max="9" value="0" step="1">
+    </label>
+    <div class="pq-scale-out" id="sc-out" aria-live="polite"></div>
+  </div>
+
+  <details class="zk-details">
+    <summary>Why this is the right kind of hard</summary>
+    <p><strong>Without the error</strong>, the equations Ax = b are solved in an instant by Gaussian elimination, whatever their size. <strong>With the error</strong>, elimination combines the equations and the small errors add up into large ones, so the answer it gives is wrong. That is what you saw in attack 1.</p>
+    <p><strong>Searching</strong> works for two unknowns, but the number of candidates grows exponentially with n. The best known attacks are cleverer than searching: they use lattice reduction. Still, they take exponential time too, on classical and on quantum computers. No quantum algorithm like Shor’s is known for LWE.</p>
+    <p><strong>Real parameters.</strong> ML-KEM-512, the smallest version of the new NIST key-exchange standard, works with 512 unknowns modulo q = 3,329, with a structured matrix to keep keys small. Its security is estimated to be comparable to AES-128.</p>
+    <p><strong>From problem to encryption.</strong> The public key is the pair (A, b). To encrypt a bit, the sender adds up a random selection of the equations and hides the bit in the result. Only someone who knows x can remove the noise and read the bit (Regev, 2005).</p>
+  </details>
+</section>
+
+<!-- 3. The new standards -->
+<section class="zk-sec container" id="standards">
+  <h2><span class="zk-num">3</span> The new standards</h2>
+  <div class="pq-table-wrap">
+  <table class="pq-table">
+    <thead><tr><th>Standard</th><th>Former name</th><th>Use</th><th>Based on</th></tr></thead>
+    <tbody>
+      <tr><td><strong>ML-KEM</strong> (FIPS 203)</td><td>Kyber</td><td>Key exchange</td><td>Lattices (module LWE)</td></tr>
+      <tr><td><strong>ML-DSA</strong> (FIPS 204)</td><td>Dilithium</td><td>Signatures</td><td>Lattices (module LWE)</td></tr>
+      <tr><td><strong>SLH-DSA</strong> (FIPS 205)</td><td>SPHINCS+</td><td>Signatures</td><td>Hash functions only</td></tr>
+      <tr><td><strong>FN-DSA</strong></td><td>Falcon</td><td>Signatures</td><td>Lattices (NTRU)</td></tr>
+      <tr><td><strong>HQC</strong></td><td>HQC</td><td>Key exchange</td><td>Error-correcting codes</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>Two other families were broken during the selection process: Rainbow (multivariate polynomials) and SIKE (isogenies). Having standards based on different problems is a hedge in case one of them falls. The migration is already under way: Chrome and Cloudflare use a hybrid of X25519 and ML-KEM, and Signal and iMessage have added post-quantum key exchange.</p>
+  <p>The ZKBR group follows this field because zero-knowledge proof systems are affected too: many rest on elliptic curves. See the <a href="/talks/">slides of the talk</a> for more, including what the migration means for Bitcoin and Ethereum.</p>
+</section>
+</div>
+<script src="{{ .Site.Params.staticPath }}/js/pq.js" defer></script>
+{{ end }}
