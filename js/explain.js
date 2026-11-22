@@ -59,9 +59,9 @@
   });
 
   // ---------- 3. Blum's Hamiltonian-circuit protocol ----------
-  const N = 6, NAMES = "ABCDEF";
-  const CYCLE = [0, 2, 4, 1, 5, 3];                    // the prover's secret circuit in G
-  const EXTRA = [[0, 1], [2, 3], [4, 5]];
+  const N = 8, NAMES = "ABCDEFGH", BOXES = N * (N - 1), WORD = "eight";
+  const CYCLE = [0, 3, 6, 1, 5, 2, 7, 4];                    // the prover's secret circuit in G
+  const EXTRA = [[0, 1], [2, 3], [4, 5], [6, 7], [1, 4], [3, 7]];
   const G = Array.from({ length: N }, () => Array(N).fill(0));
   const addE = (M, a, b) => { M[a][b] = M[b][a] = 1; };
   CYCLE.forEach((v, i) => addE(G, v, CYCLE[(i + 1) % N]));
@@ -96,7 +96,7 @@
   let R = null, busy = false;
   const S = { passed: 0, caught: 0, round: 0 };
   const cheat = () => $("g-cheat").checked;
-  const LBL = ["1", "2", "3", "4", "5", "6"];
+  const LBL = Array.from({ length: N }, (_, i) => String(i + 1));
 
   async function newRound() {
     const perm = shuffle([...Array(N).keys()]);         // perm[v] = new name of public vertex v
@@ -120,7 +120,7 @@
   }
 
   function renderMatrix(marks = {}) {
-    const m = $("g-matrix"); m.textContent = "";
+    const m = $("g-matrix"); m.textContent = ""; m.style.gridTemplateColumns = `1.2em repeat(${N}, minmax(0, 1fr))`;
     m.appendChild(el("div", "hd", ""));
     LBL.forEach((l) => m.appendChild(el("div", "hd", l)));
     for (let i = 0; i < N; i++) {
@@ -135,7 +135,7 @@
         m.appendChild(b);
       }
     }
-    $("g-matrix-note").textContent = R.cells.size ? `${R.cells.size} of 30 boxes opened. Each opening is checked against its hash.` : "Each box holds one bit, sealed as SHA-256(bit | nonce). Hover to see the hash.";
+    $("g-matrix-note").textContent = R.cells.size ? `${R.cells.size} of ${BOXES} boxes opened. Each opening is checked against its hash.` : "Each box holds one bit, sealed as SHA-256(bit | nonce). Hover to see the hash.";
   }
 
   function setButtons() {
@@ -166,7 +166,7 @@
       drawGraph($("g-open"), R.H, { labels: LBL, mapLabels: inv.map((x) => "= " + x) });
       $("g-open-title").textContent = "Opened: the whole scrambled graph";
       $("g-open-note").textContent = "The renaming is revealed too, for example 1 = " + inv[0] + ". It is random, so it says nothing about the circuit.";
-      msg = ok ? "All 30 boxes match the public graph under the renaming." : `${wrong.size} boxes do not match the public graph. The prover sealed a different graph.`;
+      msg = ok ? `All ${BOXES} boxes match the public graph under the renaming.` : `${wrong.size} boxes do not match the public graph. The prover sealed a different graph.`;
     } else {
       let cyc = R.known;
       if (!cyc) {                                           // a cheater without a circuit must open something
@@ -178,9 +178,9 @@
       ok = zeros.size === 0 && new Set(cyc).size === N;
       marks.cyc = new Set(cells.filter((k) => !zeros.has(k))); marks.wrong = zeros;
       drawGraph($("g-open"), null, { labels: LBL, cycle: cyc, onlyCycle: true });
-      $("g-open-title").textContent = "Opened: six boxes, one per row and column";
-      $("g-open-note").textContent = ok ? "A round trip through six renamed points. Any six points could give this picture." : "The prover claimed this round trip, but some of its edges do not exist.";
-      msg = ok ? "The six opened boxes all contain 1 and form one round trip through all six vertices." : (zeros.size === 1 ? "One of the opened boxes contains 0: that edge does not exist." : `${zeros.size} of the opened boxes contain 0: those edges do not exist.`) + " The prover does not know a circuit.";
+      $("g-open-title").textContent = `Opened: ${WORD} boxes, one per row and column`;
+      $("g-open-note").textContent = ok ? `A round trip through ${WORD} renamed points. Any ${WORD} points could give this picture.` : "The prover claimed this round trip, but some of its edges do not exist.";
+      msg = ok ? `The ${WORD} opened boxes all contain 1 and form one round trip through all ${WORD} vertices.` : (zeros.size === 1 ? "One of the opened boxes contains 0: that edge does not exist." : `${zeros.size} of the opened boxes contain 0: those edges do not exist.`) + " The prover does not know a circuit.";
     }
     renderMatrix(marks);
     const hashes = await verifyHashes(R.cells);
