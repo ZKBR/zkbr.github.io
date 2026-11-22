@@ -1,0 +1,17 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Title }}: {{ with .Params.authors }}{{ delimit . ", " }}{{ end }}">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/index.css" media="all">
+{{ end }}
+
+{{ define "title" }}
+{{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section class="py-5">
+  <div class="container px-3 px-md-5" style="max-width: 900px">
+    <p class="small"><a href="{{ "papers/" | relURL }}">← All papers</a></p>
+    {{ partial "paper-item.html" . }}
+  </div>
+</section>
+{{ end }}

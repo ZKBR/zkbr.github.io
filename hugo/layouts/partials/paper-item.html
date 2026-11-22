@@ -1,0 +1,14 @@
+{{/* One paper in a list: title (to the paper), authors, venue/date, tags, comment. */}}
+<article class="paper py-3 border-bottom">
+  <h5 class="mb-1"><a href="{{ .Params.link }}" target="_blank" rel="noopener">{{ .Title }}</a></h5>
+  <div class="text-secondary small">
+    {{ with .Params.authors }}{{ delimit . ", " }}{{ end }}
+    {{ with .Params.venue }} · {{ . }}{{ end }}
+    {{ with .Params.paperDate }} · {{ . }}{{ end }}
+  </div>
+  {{ with .Content }}<div class="mt-2">{{ . }}</div>{{ end }}
+  <div class="small mt-1">
+    <a class="text-secondary" href="{{ .RelPermalink }}">{{ .Date.Format "2 Jan 2006" }}</a>
+    {{ range .Params.tags }} <a class="badge bg-secondary text-decoration-none" href="{{ "/tags/" | relURL }}{{ . | urlize }}/">{{ . }}</a>{{ end }}
+  </div>
+</article>

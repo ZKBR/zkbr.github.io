@@ -10,5 +10,6 @@ links:
   lattes: https://lattes.cnpq.br/4883546536715160
   linkedin: https://www.linkedin.com/in/zklucas
   x: https://x.com/zklucas_
+former: true
 featured:
 ---

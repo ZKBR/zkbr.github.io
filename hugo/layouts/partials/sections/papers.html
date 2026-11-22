@@ -1,0 +1,10 @@
+{{ $papers := where .Site.RegularPages "Section" "papers" }}
+{{ if gt (len $papers) 0 }}
+<section id="papers" class="py-5 anchor-below-header">
+  <div class="container px-3 px-md-5" style="max-width: 900px">
+    <h3 class="text-center text-secondary py-3">Latest papers</h3>
+    {{ range first 5 $papers.ByDate.Reverse }}{{ partial "paper-item.html" . }}{{ end }}
+    <p class="text-center mt-3"><a href="{{ "papers/" | relURL }}">All papers</a> · <a href="{{ "papers/index.xml" | relURL }}">RSS</a></p>
+  </div>
+</section>
+{{ end }}

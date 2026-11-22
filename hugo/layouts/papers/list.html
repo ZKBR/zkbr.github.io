@@ -1,0 +1,21 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Description }}">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/index.css" media="all">
+<link rel="alternate" type="application/rss+xml" title="ZKBR papers" href="{{ "papers/index.xml" | relURL }}">
+{{ end }}
+
+{{ define "title" }}
+{{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section class="py-5">
+  <div class="container px-3 px-md-5" style="max-width: 900px">
+    <h3 class="text-center text-secondary py-3">{{ .Title }}</h3>
+    <div class="mb-3">{{ .Content }}</div>
+    {{ $tags := slice }}{{ range .RegularPages }}{{ $tags = $tags | append .Params.tags }}{{ end }}
+    {{ with uniq $tags }}<div class="mb-3 small">Topics: {{ range sort . }}<a class="badge bg-secondary text-decoration-none me-1" href="{{ "/tags/" | relURL }}{{ . | urlize }}/">{{ . }}</a>{{ end }}</div>{{ end }}
+    {{ range .RegularPages.ByDate.Reverse }}{{ partial "paper-item.html" . }}{{ else }}<p class="text-secondary">No papers yet.</p>{{ end }}
+  </div>
+</section>
+{{ end }}

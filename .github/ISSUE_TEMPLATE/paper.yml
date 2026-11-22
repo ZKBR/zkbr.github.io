@@ -1,0 +1,39 @@
+name: New paper
+description: Publish a paper on the Papers page (members only; the site updates in a minute or two)
+title: "[paper] "
+body:
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      description: arXiv, IACR ePrint, DOI or any page of the paper. Title, authors and date are filled in automatically for arXiv, ePrint and DOI links.
+      placeholder: https://eprint.iacr.org/2025/1234
+    validations:
+      required: true
+  - type: textarea
+    id: comment
+    attributes:
+      label: Comment
+      description: Why it is worth reading, in one or two sentences. Markdown works.
+    validations:
+      required: true
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated, for example zkVM, STARK, folding, lookup, RISC-V, benchmark
+  - type: input
+    id: title
+    attributes:
+      label: Title (optional)
+      description: Only if the automatic title is wrong or missing.
+  - type: input
+    id: authors
+    attributes:
+      label: Authors (optional)
+      description: Comma-separated. Only if the automatic list is wrong or missing.
+  - type: input
+    id: venue
+    attributes:
+      label: Venue (optional)
+      description: For example CRYPTO 2026, or IACR ePrint. Filled in automatically for ePrint and arXiv.

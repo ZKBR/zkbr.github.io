@@ -1,0 +1,88 @@
+# Builds the Hugo site (hugo/) and publishes the result at the root of this branch, which is what
+# GitHub Pages serves. Also turns a "New paper" issue (title starting with "[paper]", opened by a
+# member of the group) into a page under Papers, then closes the issue with a link.
+name: Site
+
+on:
+  push:
+    branches: [main]
+    paths: ["hugo/**", "scripts/**", ".github/workflows/site.yml"]
+  issues:
+    types: [opened]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: site
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: >-
+      github.event_name != 'issues' ||
+      (startsWith(github.event.issue.title, '[paper]') &&
+       contains(fromJSON('["OWNER","MEMBER","COLLABORATOR"]'), github.event.issue.author_association))
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.147.3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 1
+
+      - name: Add the paper from the issue
+        id: paper
+        if: github.event_name == 'issues'
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+        run: |
+          set -e
+          file=$(python3 scripts/add_paper.py)
+          echo "file=$file" >> "$GITHUB_OUTPUT"
+          echo "slug=$(basename "$file" .md)" >> "$GITHUB_OUTPUT"
+          cat "$file"
+
+      - name: Install Hugo
+        run: |
+          curl -sSL -o /tmp/hugo.tgz "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+          tar -xzf /tmp/hugo.tgz -C /tmp hugo
+
+      - name: Build and copy to the root
+        run: |
+          /tmp/hugo -s hugo -d "$RUNNER_TEMP/site" --minify
+          rsync -a --delete \
+            --exclude .git --exclude .github --exclude hugo --exclude scripts \
+            --exclude .gitmodules --exclude .gitignore --exclude README.md --exclude CNAME \
+            "$RUNNER_TEMP/site/" ./
+
+      - name: Commit
+        env:
+          PAPER_FILE: ${{ steps.paper.outputs.file }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          git config user.name "zkbr-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
+          msg="Build site"
+          [ -n "$PAPER_FILE" ] && msg="Add paper: ${ISSUE_TITLE#\[paper\] } (#$ISSUE_NUMBER)"
+          git commit -q -m "$msg"
+          git push
+
+      - name: Close the issue with a link
+        if: github.event_name == 'issues'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue close ${{ github.event.issue.number }} --comment "Published: https://zkbr.github.io/papers/${{ steps.paper.outputs.slug }}/ (the page is live once GitHub Pages finishes, usually within a minute)."
+
+      - name: Report a failure on the issue
+        if: failure() && github.event_name == 'issues'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue comment ${{ github.event.issue.number }} --body "Could not publish this paper; see the Actions log. Most likely the title could not be found automatically; edit the issue, fill in Title and Authors, and open a new one."

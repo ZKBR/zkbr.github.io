@@ -132,6 +132,10 @@
                     </li>
                     {{ end }}
 
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="{{ if .IsHome }}{{ .Site.BaseURL | relURL }}#papers{{ else }}/papers{{ end }}" aria-label="papers">Papers</a>
+                    </li>
+
                     {{ if not (.Site.Params.sections.disableTeam | default false) }}
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="{{ if .IsHome }}{{ .Site.BaseURL | relURL }}#team{{ else }}/team{{ end }}" aria-label="team">

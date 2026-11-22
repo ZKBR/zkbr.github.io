@@ -1,12 +1,14 @@
 {{ if not .Site.Params.sections.disableTeam | default true }}
-{{ if gt (len (where .Site.RegularPages "Type" "team")) 0 }}
+{{ $members := where (where .Site.RegularPages "Type" "team") "Params.former" "!=" true }}
+{{ $former := where (where .Site.RegularPages "Type" "team") "Params.former" true }}
+{{ if gt (len $members) 0 }}
 <section id="team" class="py-5 anchor-below-header">
     <div class="container">
         <h3 class="text-center text-secondary py-3">
             Team
         </h3>
         <div class="row justify-content-center px-3 px-md-5">
-            {{ range sort (where .Site.RegularPages "Type" "team") "Params.index" "asc" }}
+            {{ range sort $members "Params.index" "asc" }}
             <div class="col-lg-3 col-md-6 my-3">
                 <div class="card my-3 h-100" title="{{ .Params.name }}">
                     {{ if and (not (.Site.Params.team.disableFeaturedImage | default false)) (.Params.image) }}
@@ -22,6 +24,9 @@
                         <div class="card-text secondary-font">
                             {{ .Params.role }}
                         </div>
+                        {{ end }}
+                        {{ with .Content }}
+                        <div class="card-text small mt-2">{{ . }}</div>
                         {{ end }}
                     </div>
                     {{ if and .Params.badges (.Site.Params.team.showBadges | default true) }}
@@ -68,6 +73,12 @@
             </div>
             {{ end }}
         </div>
+        {{ if gt (len $former) 0 }}
+        <p class="text-center text-secondary small mt-4 mb-0">
+            Former members:
+            {{ range $i, $p := sort $former "Params.name" "asc" }}{{ if $i }}, {{ end }}{{ with $p.Params.links.linkedin }}<a href="{{ . }}" target="_blank">{{ $p.Params.name }}</a>{{ else }}{{ $p.Params.name }}{{ end }}{{ end }}
+        </p>
+        {{ end }}
     </div>
 </section>
 {{ end }}
