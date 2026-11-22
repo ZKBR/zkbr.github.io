@@ -70,12 +70,12 @@
 <section class="zk-sec container" id="play">
   <h2><span class="zk-num">3</span> Play a zero-knowledge proof</h2>
   <p>A <strong>Hamiltonian circuit</strong> is a round trip through a graph that visits every vertex exactly once and returns to the start. Finding one in a large graph is hard. The prover claims to know a circuit in the graph below and will convince you without showing it. You are the verifier. This is Blum’s protocol (1986).</p>
-  <p class="zk-note">This is a toy example: with 8 vertices there are only 2,520 possible round trips, and a computer tries them all instantly. But their number, (n−1)!/2, grows faster than exponentially: for 100 vertices it is about 10<sup>155</sup>. The problem is NP-complete, and no known algorithm avoids exponential time. With a few hundred vertices, finding the circuit is out of reach, yet the proof works exactly the same way.</p>
+  <p class="zk-note">This is a toy example: with 6 vertices there are only 60 possible round trips, and a computer tries them all instantly. But their number, (n−1)!/2, grows faster than exponentially: for 100 vertices it is about 10<sup>155</sup>. The problem is NP-complete, and no known algorithm avoids exponential time. With a few hundred vertices, finding the circuit is out of reach, yet the proof works exactly the same way.</p>
 
   <div class="zk-play">
     <div class="zk-panel">
       <h3>The public graph</h3>
-      <svg class="zk-graph" id="g-public" viewBox="0 0 240 240" role="img" aria-label="The public graph with eight vertices A to H"></svg>
+      <svg class="zk-graph" id="g-public" viewBox="0 0 240 240" role="img" aria-label="The public graph with six vertices A to F"></svg>
       <label class="zk-check"><input type="checkbox" id="g-peek"> Peek at the prover’s secret circuit</label>
     </div>
     <div class="zk-panel">
@@ -108,10 +108,10 @@
     <ol>
       <li><strong>Commit.</strong> The prover renames the vertices at random, giving a scrambled copy of the graph, and seals each entry of its adjacency matrix in a box. Here a box is a SHA-256 hash of the bit with a random nonce: it shows nothing about the bit, and the prover cannot change the bit later.</li>
       <li><strong>Challenge.</strong> You flip a coin, or choose.</li>
-      <li><strong>Respond.</strong> On 0, the prover opens all boxes and the renaming, and you check that the boxes hold a faithful copy of the public graph. On 1, the prover opens only the boxes of a circuit in the scrambled copy, and you check they form a round trip through all eight vertices.</li>
+      <li><strong>Respond.</strong> On 0, the prover opens all boxes and the renaming, and you check that the boxes hold a faithful copy of the public graph. On 1, the prover opens only the boxes of a circuit in the scrambled copy, and you check they form a round trip through all six vertices.</li>
     </ol>
     <p><strong>Why it convinces.</strong> A prover who does not know a circuit can prepare for only one of the two challenges, so it is caught with probability ½ in each round. After 20 rounds, the chance it fooled you is below one in a million.</p>
-    <p><strong>Why you learn nothing.</strong> On 0 you see a random renaming of a graph you already knew. On 1 you see a round trip through eight unnamed points. You could have produced either view yourself, without the prover. That is the formal definition of zero knowledge (Goldwasser, Micali and Rackoff, 1985): everything the verifier sees can be simulated without the secret.</p>
+    <p><strong>Why you learn nothing.</strong> On 0 you see a random renaming of a graph you already knew. On 1 you see a round trip through six unnamed points. You could have produced either view yourself, without the prover. That is the formal definition of zero knowledge (Goldwasser, Micali and Rackoff, 1985): everything the verifier sees can be simulated without the secret.</p>
     <p><strong>Why it is not succinct.</strong> Each round sends a sealed box per matrix entry, and you need many rounds. For a graph with a thousand vertices, that is millions of boxes. SNARKs get the same kind of guarantee with a proof of a few hundred bytes.</p>
   </details>
 </section>

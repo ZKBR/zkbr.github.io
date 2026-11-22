@@ -59,9 +59,9 @@
   });
 
   // ---------- 3. Blum's Hamiltonian-circuit protocol ----------
-  const N = 8, NAMES = "ABCDEFGH", BOXES = N * (N - 1), WORD = "eight";
-  const CYCLE = [0, 3, 6, 1, 5, 2, 7, 4];                    // the prover's secret circuit in G
-  const EXTRA = [[0, 1], [2, 3], [4, 5], [6, 7], [1, 4], [3, 7]];
+  const N = 6, NAMES = "ABCDEF", BOXES = N * (N - 1), WORD = "six";
+  const CYCLE = [0, 2, 4, 1, 5, 3];                    // the prover's secret circuit in G
+  const EXTRA = [[0, 1], [2, 3], [4, 5]];
   const G = Array.from({ length: N }, () => Array(N).fill(0));
   const addE = (M, a, b) => { M[a][b] = M[b][a] = 1; };
   CYCLE.forEach((v, i) => addE(G, v, CYCLE[(i + 1) % N]));
@@ -96,6 +96,7 @@
   let R = null, busy = false;
   const S = { passed: 0, caught: 0, round: 0 };
   const cheat = () => $("g-cheat").checked;
+  const LOCK = '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="1.5"/><path d="M5 7V5a3 3 0 0 1 6 0v2"/></svg>';
   const LBL = Array.from({ length: N }, (_, i) => String(i + 1));
 
   async function newRound() {
@@ -128,14 +129,14 @@
       for (let j = 0; j < N; j++) {
         if (i === j) { m.appendChild(el("div", "zk-box diag", "")); continue; }
         const c = R.C[i][j], k = i + "," + j, open = R.cells.has(k);
-        const b = el("div", "zk-box " + (open ? "open" + (c.bit ? " one" : "") : "sealed"), open ? String(c.bit) : `<span>${c.h.slice(0, 4)}</span>`);
+        const b = el("div", "zk-box " + (open ? "open" + (c.bit ? " one" : "") : "sealed"), open ? String(c.bit) : LOCK);
         if (marks.cyc && marks.cyc.has(k)) b.classList.add("cyc");
         if (marks.wrong && marks.wrong.has(k)) b.classList.add("wrong");
         b.title = open ? `bit ${c.bit}, nonce ${c.nonce}` : `SHA-256 = ${c.h}`;
         m.appendChild(b);
       }
     }
-    $("g-matrix-note").textContent = R.cells.size ? `${R.cells.size} of ${BOXES} boxes opened. Each opening is checked against its hash.` : "Each box holds one bit, sealed as SHA-256(bit | nonce). Hover to see the hash.";
+    $("g-matrix-note").textContent = R.cells.size ? `${R.cells.size} of ${BOXES} boxes opened. Each opening is checked against its hash.` : "Each box holds one bit (1 = edge, 0 = no edge), sealed so that you cannot see it and the prover cannot change it. Hover over a box to see its seal, a SHA-256 hash.";
   }
 
   function setButtons() {

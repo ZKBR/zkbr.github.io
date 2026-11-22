@@ -106,7 +106,7 @@
 .zk-matrix .hd { text-align: center; color: var(--text-secondary-color); font-weight: 700; align-self: center; }
 .zk-box { aspect-ratio: 1; border-radius: 5px; display: grid; place-items: center; background: var(--zk-accent-soft); border: 1px solid var(--zk-line); transition: transform .35s ease, background .2s; overflow: hidden; }
 .zk-box.diag { background: transparent; border-style: dashed; opacity: .4; }
-.zk-box.sealed span { opacity: .75; font-size: .58rem; }
+.zk-box.sealed svg { width: 45%; height: 45%; fill: none; stroke: var(--zk-accent); stroke-width: 1.6; stroke-linejoin: round; }
 .zk-box.open { background: transparent; font-size: .95rem; font-weight: 700; animation: zk-flip .4s ease both; }
 .zk-box.open.one { background: var(--zk-accent-soft); }
 .zk-box.cyc, .zk-box.open.cyc { background: var(--zk-accent); color: #fff; border-color: var(--zk-accent); }
