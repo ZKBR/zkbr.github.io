@@ -1,0 +1,37 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Description }}">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/index.css" media="all">
+<style>
+  .talk { padding: 1.25rem 0; border-bottom: 1px solid rgba(127,127,127,.25); }
+  .talk:last-child { border-bottom: 0; }
+  .talk h2 { font-size: 1.2rem; font-weight: 700; margin: 0 0 .3rem; }
+  .talk .meta { font-size: .9rem; color: var(--text-secondary-color); margin-bottom: .5rem; }
+  .talk p { font-size: 1rem; margin-bottom: .6rem; }
+  .talk .links a { margin-right: 1.2rem; font-weight: 600; }
+  .talk .links span { font-size: .85rem; color: var(--text-secondary-color); }
+</style>
+{{ end }}
+
+{{ define "title" }}
+{{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section class="py-5">
+  <div class="container px-3 px-md-5" style="max-width: 900px">
+    <h1 class="mb-3">Talks</h1>
+    {{ range sort .Params.talks "date" "desc" }}
+    <article class="talk">
+      <h2>{{ .title }}</h2>
+      <div class="meta">{{ .speaker }} · {{ .event }} · {{ with .datetext }}{{ . }}{{ else }}{{ time.Format "2 January 2006" .date }}{{ end }}</div>
+      <p>{{ .summary }}</p>
+      <div class="links">
+        <a href="{{ .slides }}" target="_blank" rel="noopener">Slides (PDF)</a>
+        {{ with .interactive }}<a href="{{ . }}">Interactive version</a>{{ end }}
+        <span>{{ .size }}</span>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
