@@ -1,0 +1,39 @@
+/* Post-quantum explainer: /pq/ (builds on explain.css) */
+.pq-two { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.pq-two .zk-card p { font-size: .95rem; margin-bottom: .5rem; }
+.pq-bad { border-left: 4px solid var(--zk-bad); }
+.pq-ok { border-left: 4px solid var(--zk-good); }
+.pq-fix { margin: 0; }
+.pq-eq-panel { margin-top: 1rem; }
+.pq-eq { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 1.05rem; text-align: center; }
+.pq-rows { display: inline-flex; flex-direction: column; gap: .35rem; text-align: left; }
+.pq-row { white-space: nowrap; }
+.pq-c { display: inline-block; min-width: 2ch; text-align: right; }
+.pq-b { display: inline-block; min-width: 2ch; font-weight: 700; color: var(--zk-accent); }
+.pq-e { color: #b26a00; }
+.dark .pq-e { color: #f0b35a; }
+.pq-val { font-weight: 700; }
+.pq-op { margin: 0 .3rem; }
+.pq-mod { margin-top: .8rem; font-size: .85rem; color: var(--text-secondary-color); font-family: inherit; }
+.pq-mod b { color: var(--text-color); }
+.pq-attacks { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+.pq-out { margin-top: .8rem; font-size: .92rem; }
+.pq-out p { margin: .4rem 0 0; }
+.pq-out .ok, .pq-res .ok { color: var(--zk-good); }
+.pq-out .bad, .pq-res .bad { color: var(--zk-bad); }
+.pq-out p.ok, .pq-out p.bad { font-weight: 600; }
+.pq-res { display: flex; flex-wrap: wrap; gap: .3rem .9rem; margin-top: .4rem; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .82rem; }
+.pq-bar { height: 6px; border-radius: 3px; background: var(--zk-line); margin-top: .8rem; overflow: hidden; }
+.pq-bar i { display: block; height: 100%; width: 0; background: var(--zk-accent); }
+.pq-scale { margin-top: 1rem; }
+.pq-slider { display: block; font-size: .95rem; margin: .4rem 0 .6rem; }
+.pq-slider input { width: 100%; accent-color: var(--zk-accent); margin-top: .4rem; }
+.pq-scale-out p { margin: .3rem 0; font-size: .95rem; }
+.pq-table-wrap { overflow-x: auto; }
+.pq-table { width: 100%; border-collapse: collapse; font-size: .95rem; margin-bottom: 1rem; }
+.pq-table th, .pq-table td { text-align: left; padding: .5rem .7rem; border-bottom: 1px solid var(--zk-line); }
+.pq-table th { font-size: .85rem; color: var(--text-secondary-color); font-weight: 600; }
+@media (max-width: 760px) {
+  .pq-two, .pq-attacks { grid-template-columns: 1fr; }
+  .pq-eq { font-size: .9rem; }
+}
